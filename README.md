@@ -1,5 +1,7 @@
 # HTTP statuses
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/c9e88fc0-864a-4781-8ff2-1b0b98cc3e21/deploy-status)](https://app.netlify.com/sites/httpstatuses/deploys) [![Build & Deploy to GitHub Pages](https://github.com/dylankenneally/http-statuses/actions/workflows/build-and-deploy.yml/badge.svg)](https://github.com/dylankenneally/http-statuses/actions/workflows/build-and-deploy.yml)
+
 An easy to use reference for HTTP status codes.
 
 This reference has been built so I can experiment with [11ty]. Changes to this repository are automatically deployed as a [Netlify app] and to [GitHub pages].
@@ -56,11 +58,6 @@ Parts of the copy (text content) is courtesy of [httpstatuses.io](https://httpst
 ## TODO:
 
 Focus on playing with 11ty, make notes on findings.
-
-#### deployment
-
-- [ ] auto deploy to netlify
-- [ ] auto deploy to github pages
 
 #### content
 
