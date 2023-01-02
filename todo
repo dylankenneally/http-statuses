@@ -1,4 +1,8 @@
 TODO:
+you have css in base.njk:
+    1. some of it is specific to code.njk, move it
+    2. get it in external CSS files
+
 
 links
     1. if it's an external link: new tab
@@ -19,7 +23,10 @@ content
 	source - update to latest RFC's
 	content - is okay?
     mdo's best practices - ensure followed
-    footer, copyright, etc - use https://11ty.rocks/eleventyjs/dates/
+    footer, copyright, etc
+        - use https://11ty.rocks/eleventyjs/dates/ ?
+        - use via an include in the template layout
+    meta data for SEO is not present, or social crap
 
 style
 	mimic laws of ux
