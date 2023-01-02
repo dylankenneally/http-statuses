@@ -90,7 +90,7 @@ Focus on playing with 11ty, make notes on findings.
 - [ ] mdo's best practices - ensure followed
 - [ ] meta data for SEO is not present, or social media stuff
 - [ ] footer, copyright, etc
-  - [ ] use https://11ty.rocks/eleventyjs/dates/ ?
+  - [ ] use <https://11ty.rocks/eleventyjs/dates/> ?
   - [ ] use via an include in the template layout
 
 #### tech debt
@@ -99,6 +99,8 @@ Focus on playing with 11ty, make notes on findings.
 - [ ] css to external file(s)
 
 ## scratch pad
+
+Notes on things I've found whilst working with 11ty.
 
 #### External links
 
@@ -120,7 +122,7 @@ module.exports = function(eleventyConfig) {
 };
 ```
 
-#### Suberscripts
+#### Superscripts
 
 11ty doesn't support them by default (subscript too?). Install required module:
 
