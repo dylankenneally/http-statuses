@@ -16,7 +16,7 @@ concurrency:
   cancel-in-progress: true
 
 env:
-  DEPLOY_PATH: http-statuses
+  DEPLOY_PATH: /http-statuses/
 
 jobs:
   build:
