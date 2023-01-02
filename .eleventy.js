@@ -20,6 +20,6 @@ module.exports = function(eleventyConfig) {
 			output: 'build',
 		},
 		markdownTemplateEngine: 'njk',
-		pathPrefix: process.env.HOME_PATH,
+		pathPrefix: process.env.DEPLOY_PATH,
 	};
 };
