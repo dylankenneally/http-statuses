@@ -47,10 +47,6 @@ Default values are stored in the [`.env`](./.env) file in the root of the reposi
 
 Note that changes to these variables are not noticed while the development server is running, you will need to restart the dev server via `npm start` to see the updated values.
 
-### Working with VS Code?
-
-Opening the project folder in VS Code will automatically run `npm start`. See the [tasks file](./.vscode/tasks.json) file for details.
-
 ## Credits
 
 Parts of the copy (text content) is courtesy of [httpstatuses.io](https://httpstatuses.io/). The UX for the site is inspired by [Laws of UX](https://lawsofux.com/) by [Jon Yablonski](https://jonyablonski.com/).
@@ -85,7 +81,8 @@ Focus on playing with 11ty, make notes on findings.
 - [ ] minifed output
 - [ ] comments not being stripped out of output
 - [ ] mdo's best practices - ensure followed
-- [ ] meta data for SEO is not present, or social media stuff
+- [ ] meta data for SEO is not present, or social media stuff, favicon etc
+
 - [ ] footer, copyright, etc
   - [ ] use <https://11ty.rocks/eleventyjs/dates/> ?
   - [ ] use via an include in the template layout
