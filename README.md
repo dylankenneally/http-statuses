@@ -89,7 +89,6 @@ Focus on playing with 11ty, make notes on findings.
 
 #### tech debt
 
-- [ ] css in base.njk, some is specific to code.njk
 - [ ] css to external file(s)
 
 ## scratch pad
