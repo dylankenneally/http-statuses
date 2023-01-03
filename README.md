@@ -77,8 +77,8 @@ Focus on playing with 11ty, make notes on findings.
 
 #### other
 
-- [ ] external links to open in new tab (see scratch below), indicat with icon too?
-- [ ] minifed output
+- [ ] external links to open in new tab (see scratch below), indicate with icon too?
+- [ ] minifed output (see scratch below)
 - [ ] comments not being stripped out of output
 - [ ] mdo's best practices - ensure followed
 - [ ] meta data for SEO is not present, or social media stuff, favicon etc
@@ -218,3 +218,29 @@ ol.footnotes-list {
 [Netlify app]: https://httpstatuses.netlify.app/
 [GitHub pages]: https://dylankenneally.github.io/http-statuses/
 [Node.js]: https://nodejs.org/en/
+
+#### Minify output
+
+<https://www.11ty.dev/docs/config/#transforms>
+
+Update eleventy config:
+
+```js
+const htmlmin = require("html-minifier");
+
+module.exports = function(eleventyConfig) {
+  eleventyConfig.addTransform("htmlmin", function(content) {
+    // Prior to Eleventy 2.0: use this.outputPath instead
+    if( this.page.outputPath && this.page.outputPath.endsWith(".html") ) {
+      let minified = htmlmin.minify(content, {
+        useShortDoctype: true,
+        removeComments: true,
+        collapseWhitespace: true
+      });
+      return minified;
+    }
+
+    return content;
+  });
+};
+```
