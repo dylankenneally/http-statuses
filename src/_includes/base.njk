@@ -6,23 +6,19 @@
 		<title>{% if (title) %}{{ title }} — {% endif %}{{ meta.siteName }}</title>
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="/css/style.css" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=IBM+Plex+Sans:wght@400;700&display=swap" rel="stylesheet">
+		<link href="/css/style.css" rel="stylesheet">
 	</head>
 	<body>
 		<span id="header-background"></span>
 		<nav>
-			{% block nav %}<p><strong>THIS IS PLACEHOLDER `nav`. Where's the real thing?</strong></p>{% endblock %}
+			{% block nav %}{{ nav | safe }}{% endblock %}
 		</nav>
 		<header>
-			{% block header %}
-			<p><strong>THIS IS PLACEHOLDER `header`. Where's the real thing?</strong></p>
-			{% endblock %}
+			{% block header %}{{ header | safe }}{% endblock %}
 		</header>
 		<main>
-			{% block content %}
-			<p><strong>THIS IS PLACEHOLDER `content`. Where's the real thing?</strong></p>
-			{% endblock %}
+			{% block content %}{{ content | safe }}{% endblock %}
 		</main>
 		{# <footer>todo:</footer> #}
 		<script>

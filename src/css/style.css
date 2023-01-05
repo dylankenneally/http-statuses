@@ -51,6 +51,15 @@ h2, p {
     font-size: 1.7em;
 }
 
+p {
+    margin: 0;
+}
+
+.banner-title {
+    margin: 0;
+    line-height: 1;
+}
+
 svg.icon {
     fill: var(--text-colour);
 }
