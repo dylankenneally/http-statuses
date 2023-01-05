@@ -79,17 +79,17 @@ Focus on playing with 11ty, make notes on findings.
 
 - [ ] external links to open in new tab (see scratch below), indicate with icon too?
 - [ ] minifed output (see scratch below)
+- [ ] webpack/bundle
 - [ ] comments not being stripped out of output
 - [ ] mdo's best practices - ensure followed
 - [ ] meta data for SEO is not present, or social media stuff, favicon etc
-
 - [ ] footer, copyright, etc
   - [ ] use <https://11ty.rocks/eleventyjs/dates/> ?
   - [ ] use via an include in the template layout
 
 #### tech debt
 
-- [ ] css to external file(s)
+- [ ] `eleventyConfig.addWatchTarget(cssDir);` - in place, but not picking up changes
 
 ## scratch pad
 
