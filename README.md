@@ -62,6 +62,7 @@ Focus on playing with 11ty, make notes on findings.
 - [ ] 404
 - [ ] about/info
 - [ ] home page
+- [ ] overview of requests & responses model? overview of http as a protocol? NB: this is a reference to status codes, not http, but for context ...?
 
 #### ux
 
@@ -86,10 +87,11 @@ Focus on playing with 11ty, make notes on findings.
 - [ ] footer, copyright, etc
   - [ ] use <https://11ty.rocks/eleventyjs/dates/> ?
   - [ ] use via an include in the template layout
+- [ ] robots.txt
 
 #### tech debt
 
-- [ ] `eleventyConfig.addWatchTarget(cssDir);` - in place, but not picking up changes
+- [x] empty
 
 ## scratch pad
 

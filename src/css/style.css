@@ -1,6 +1,7 @@
 :root {
     --text-colour: #F4F1D0;
     --background-colour: #101014;
+    --border-colour: rgb(155, 161, 180);
 }
 
 html {
@@ -47,7 +48,7 @@ h1 {
     line-height: 1em;
 }
 
-h2, p {
+h2 {
     font-size: 1.7em;
 }
 
@@ -79,7 +80,7 @@ svg.icon {
     overflow: hidden;
     border: transparent;
     background: #16171d;
-    border-radius: 0.3rem;
+    border-radius: 0.5rem;
     text-decoration: none;
     transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
 }
@@ -116,4 +117,35 @@ main {
     h1 {
         font-size: 3.2em;
     }
+}
+
+#header-img {
+    max-width: 675px;
+}
+
+ol {
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(16rem,1fr));
+  grid-gap: 1em;
+  counter-reset: list;
+  list-style: none;
+  padding-inline-start: unset;
+}
+
+li {
+  counter-increment: list;
+}
+
+li:before {
+  content: counter(list)".";
+  border-bottom: 1px solid var(--border-colour);
+  color: var(--border-colour);
+  display: block;
+  font-size: smaller;
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.info p {
+  margin: 1rem 0;  
 }
