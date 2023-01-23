@@ -33,6 +33,6 @@
 </section>
 <section class="info">
 	<h2>Information</h2>
-	{{ body | safe }}
+	{{ body | markdown | safe }}
 </section>
 {% endblock %}

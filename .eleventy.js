@@ -1,4 +1,5 @@
 const fs = require('fs');
+const markdownIt = require('markdown-it');
 require('dotenv').config();
 
 const dir = {
@@ -38,6 +39,9 @@ module.exports = (eleventyConfig) => {
 	const cssDir = `${dir.input}/css/`;
 	eleventyConfig.addPassthroughCopy(cssDir);
 	eleventyConfig.addWatchTarget(cssDir);
+
+	const md = markdownIt({ html: true });
+	eleventyConfig.addFilter('markdown', (value) => md.render(value));
 
 	return {
 		dir,
