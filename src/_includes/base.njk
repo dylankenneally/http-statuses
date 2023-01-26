@@ -1,36 +1,36 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>{% if (title) %}{{ title }} — {% endif %}{{ meta.siteName }}</title>
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=IBM+Plex+Sans:wght@400;700&display=swap" rel="stylesheet">
-		<link href="{{ '/css/style.css' | url }}" rel="stylesheet">
-	</head>
-	<body>
-		<span id="header-background"></span>
-		<nav>
-			{% block nav %}{{ nav | safe }}{% endblock %}
-		</nav>
-		<header>
-			{% block header %}{{ header | safe }}{% endblock %}
-		</header>
-		<main>
-			{% block content %}{{ content | safe }}{% endblock %}
-		</main>
-		{# <footer>todo:</footer> #}
-		<script>
-			const headerBackground = document.getElementById('header-background');
-			const header = document.getElementsByTagName('header')[0];
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% if (title) %}{{ title }} — {% endif %}{{ meta.siteName }}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=IBM+Plex+Sans:wght@400;700&display=swap" rel="stylesheet" />
+    <link href="{{ '/css/style.css' | url }}" rel="stylesheet" />
+  </head>
+  <body>
+    <span id="header-background"></span>
+    <nav>
+      {% block nav %}{{ nav | safe }}{% endblock %}
+    </nav>
+    <header>
+      {% block header %}{{ header | safe }}{% endblock %}
+    </header>
+    <main>
+      {% block content %}{{ content | safe }}{% endblock %}
+    </main>
+    {# <footer>todo:</footer> #}
+    <script>
+      const headerBackground = document.getElementById('header-background');
+      const header = document.getElementsByTagName('header')[0];
 
-			function updateHeaderBackgroundSize() {
-				const nav = document.getElementsByTagName('nav')[0];
-				headerBackground.style.height = `${header.clientHeight + nav.clientHeight}px`;
-			}
+      function updateHeaderBackgroundSize() {
+        const nav = document.getElementsByTagName('nav')[0];
+        headerBackground.style.height = `${header.clientHeight + nav.clientHeight}px`;
+      }
 
-			new ResizeObserver(updateHeaderBackgroundSize).observe(header);
-		</script>
-	</body>
+      new ResizeObserver(updateHeaderBackgroundSize).observe(header);
+    </script>
+  </body>
 </html>
