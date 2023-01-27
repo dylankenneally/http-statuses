@@ -20,8 +20,17 @@
     <main>
       {% block content %}{{ content | safe }}{% endblock %}
     </main>
+    <a href="#header-background">
+      <div id="back-to-top">
+        <svg viewBox="0 0 24 24" class="icon">
+          <path d="M0 12l2.115 2.115 8.385-8.37V24h3V5.745l8.385 8.37L24 12 12 0z" fill-rule="nonzero"/>
+        </svg>
+      </div>
+    </a>
+    <div id="back-to-top-pixel-anchor"></div>
     {# <footer>todo:</footer> #}
     <script>
+      // Ensure out header background occupies both the header and the nav height
       const headerBackground = document.getElementById('header-background');
       const header = document.getElementsByTagName('header')[0];
 
@@ -31,6 +40,17 @@
       }
 
       new ResizeObserver(updateHeaderBackgroundSize).observe(header);
+
+      // Show/hide the back to top button based on the current scroll point
+      const btn = document.getElementById('back-to-top');
+      const observer = new IntersectionObserver((entries) => {
+        if (entries[0].boundingClientRect.y < 0) {
+          btn.classList.add('visible');
+        } else {
+          btn.classList.remove('visible');
+        }
+      });
+      observer.observe(document.getElementById('back-to-top-pixel-anchor'));
     </script>
   </body>
 </html>
