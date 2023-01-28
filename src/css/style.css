@@ -24,6 +24,11 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 :root {
+  --information-colour: rgb(0, 76, 136);
+  --success-colour: rgb(0, 136, 76);
+  --redirect-colour: rgb(136, 76, 0);
+  --client-error-colour: rgb(193, 0, 76);
+  --server-error-colour: rgb(193, 0, 0);
   --text-colour: #F4F1D0;
   --text-colour-2: rgb(151, 157, 175);
   --background-colour: #101014;
@@ -33,7 +38,7 @@ p, h1, h2, h3, h4, h5, h6 {
   --border-colour: rgb(155, 161, 180);
   --font: 'IBM Plex Sans', sans-serif;
   --font-monospace: 'IBM Plex Mono', monospace;
-  --header-background: #a6307f;
+  --header-background: var(--information-colour);
   --btn-transition: all .3s cubic-bezier(.645, .045, .355, 1);
 }
 
@@ -146,10 +151,6 @@ main {
 }
 
 @media(min-width: 800px) {
-  header {
-    text-align: start;
-  }
-
   header > * {
     flex: 1 0 50%;
   }
@@ -161,6 +162,8 @@ main {
 
 #header-img {
   max-width: 675px;
+  width: 25em;
+  height: 14em;
 }
 
 ol {
@@ -205,15 +208,11 @@ li:before {
   stroke-linejoin: round;
 }
 
-/* SVG's from https://fonts.google.com/icons/ */
+/* SVG's from https://fonts.google.com/icons/ (using Material Icon's, not Material Set's) */
 .google-svg {
   display: inline-block;
-  width: 18px;
-  height: 18px;
-}
-
-.google-svg path {
-  transform: scale(.4);
+  width: 1em;
+  height: 1em;
 }
 
 .slat {
@@ -293,7 +292,7 @@ li:before {
 
 .overview-note {
   color: var(--text-colour-2);
-  font-size: .6em;
+  font-size: smaller;
 }
 
 .overview-note svg {
