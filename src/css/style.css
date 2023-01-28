@@ -25,6 +25,7 @@ p, h1, h2, h3, h4, h5, h6 {
 
 :root {
   --text-colour: #F4F1D0;
+  --text-colour-2: rgb(151, 157, 175);
   --background-colour: #101014;
   --background-colour-2: #343434;
   --btn-colour: #16171d;
@@ -226,7 +227,7 @@ li:before {
 
 .slat p {
   text-transform: uppercase;
-  color: rgb(151, 157, 175);
+  color: var(--text-colour-2);
   font-family: var(--font-monospace);
   font-size: .75em;
   letter-spacing: .05em;
@@ -276,4 +277,13 @@ li:before {
   height: 1px;
   top: 200px;
   left: 0;
+}
+
+.overview-note {
+  color: var(--text-colour-2);
+  font-size: .6em;
+}
+
+.overview-note svg {
+  font-size: 1rem;
 }

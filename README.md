@@ -89,6 +89,7 @@ Focus on playing with 11ty, make notes on findings.
   - [ ] use <https://11ty.rocks/eleventyjs/dates/> ?
   - [ ] use via an include in the template layout
 - [ ] robots.txt
+- [ ] include 'published'/'authored' date, maybe "updated" too
 
 #### tech debt
 
