@@ -99,6 +99,7 @@ p {
 .banner-title {
   margin: 0;
   line-height: 1;
+  font-family: var(--font-monospace);
 }
 
 svg {
@@ -202,6 +203,17 @@ li:before {
   stroke-width: 2;
   stroke-linecap: round;
   stroke-linejoin: round;
+}
+
+/* SVG's from https://fonts.google.com/icons/ */
+.google-svg {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+}
+
+.google-svg path {
+  transform: scale(.4);
 }
 
 .slat {

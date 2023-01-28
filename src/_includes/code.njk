@@ -26,8 +26,8 @@
   <h2>Overview</h2>
   {{ overview }}
   {% if (standard === false) %}
-  <!-- caution/alert triangle icon (from feather icons) -->
   <p class="overview-note">
+    <!-- caution/alert triangle icon (from feather icons) -->
     <svg viewBox="0 0 24 24" class="inline-svg feather-svg">
       <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
       <line x1="12" y1="9" x2="12" y2="13"></line>
@@ -36,9 +36,18 @@
     This is a none standard status code.
   </p>
   {% endif %}
-  {% if (deprecated) %}
-  <!-- bin/trash icon (from feather icons) -->
+  {% if (experimental) %}
   <p class="overview-note">
+    <!-- science beaker icon (from google icons) -->
+    <svg class="google-svg">
+      <path d="M8.6 42q-2.1 0-2.975-1.95T6.2 36.5l12.4-14V9H16q-.65 0-1.075-.425Q14.5 8.15 14.5 7.5q0-.65.425-1.075Q15.35 6 16 6h16q.65 0 1.075.425.425.425.425 1.075 0 .65-.425 1.075Q32.65 9 32 9h-2.6v13.5l12.4 14q1.45 1.6.575 3.55Q41.5 42 39.4 42ZM8 39h32L26.4 23.6V9h-4.8v14.6Zm15.9-15Z"/>
+    </svg>
+    This status code is experimental.
+  </p>
+  {% endif %}
+  {% if (deprecated) %}
+  <p class="overview-note">
+    <!-- bin/trash icon (from feather icons) -->
     <svg viewBox="0 0 24 24" class="inline-svg feather-svg">
       <polyline points="3 6 5 6 21 6"></polyline>
       <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
@@ -65,7 +74,7 @@
     <div class="slat">
       <h3>Specification</h3>
       <div>
-        <p>{{ title }} | The HTTP Working Group</p>
+        <p>{{ title }}{% if (standard !== false) %} | The HTTP Working Group{% endif %}</p>
         {% svgExternalLink %}
       </div>
     </div>
@@ -83,9 +92,11 @@
   </a>
   {% endfor %}
 </section>
+{% if (seeAlso) %}
 <section>
   <h2>Related</h2>
   TODO: the see-also section in the code files, optional
   related code(s): {{ seeAlso }}
 </section>
+{% endif %}
 {% endblock %}
