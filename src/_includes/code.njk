@@ -1,20 +1,17 @@
 {% extends "base.njk" %}
 
 {% block nav %}
-<script>
-  const root = document.querySelector(':root');
-  if ({{ code }} < 200) {
-    root.style.setProperty('--header-background', 'var(--information-colour)');
-  } else if ({{ code }} < 300) {
-    root.style.setProperty('--header-background', 'var(--success-colour)');
-  } else if ({{ code }} < 400) {
-    root.style.setProperty('--header-background', 'var(--redirect-colour)');
-  } else if ({{ code }} < 500) {
-    root.style.setProperty('--header-background', 'var(--client-error-colour)');
-  } else {
-    root.style.setProperty('--header-background', 'var(--server-error-colour)');
+<style>
+  :root {
+    {% if (code < 200) %}   --header-background: var(--information-colour);
+    {% elif (code < 300) %} --header-background: var(--success-colour);
+    {% elif (code < 400) %} --header-background: var(--redirect-colour);
+    {% elif (code < 500) %} --header-background: var(--client-error-colour);
+    {% else %}              --header-background: var(--server-error-colour);
+    {% endif %}
   }
-</script>
+</style>
+
 <a href={{ '/' | url }} class="button">
   <!-- grid icon -->
   <svg viewBox="0 0 100 100">

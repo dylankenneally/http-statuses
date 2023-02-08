@@ -298,3 +298,7 @@ ol li:before {
 .overview-note svg {
   font-size: 1rem;
 }
+
+section p {
+  max-width: 65ch;
+}
