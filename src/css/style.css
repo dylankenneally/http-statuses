@@ -175,11 +175,11 @@ ol {
   padding-inline-start: unset;
 }
 
-li {
+ol li {
   counter-increment: list;
 }
 
-li:before {
+ol li:before {
   content: counter(list)".";
   border-bottom: 1px solid var(--border-colour);
   color: var(--border-colour);
