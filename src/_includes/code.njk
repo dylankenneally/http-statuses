@@ -45,7 +45,7 @@
 {% block content %}
 <section>
   <h2>Overview</h2>
-  {{ overview }}
+  {{ overview | markdown | safe }}
   {% if (standard === false) %}
   <p class="overview-note">
     <svg viewBox="0 0 24 24" class="inline-svg feather-svg">
