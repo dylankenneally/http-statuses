@@ -1,5 +1,7 @@
 const fs = require('fs');
 const markdownIt = require('markdown-it');
+const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+
 require('dotenv').config();
 
 const dir = {
@@ -61,6 +63,8 @@ module.exports = (eleventyConfig) => {
 
   eleventyConfig.addShortcode('useSvgExternalLink', () => externalLinkSvg({ symbol: true }));
   eleventyConfig.addShortcode('svgExternalLink', (id) => externalLinkSvg({ id }));
+
+  eleventyConfig.addPlugin(syntaxHighlight);
 
   return {
     dir,
