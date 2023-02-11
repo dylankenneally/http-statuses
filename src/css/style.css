@@ -65,10 +65,26 @@ pre, code {
   font-family: var(--font-monospace);
 }
 
+.multipart-codeblock,
 :not(pre) > code[class*="language-"],
 pre[class*="language-"],
 pre, code {
-	background: var(--background-colour-2);
+  background: var(--background-colour-2);
+}
+
+.multipart-codeblock {
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.3em;
+  /* pulling from external css, they could change 0.3... todo: merge the prism css? */
+}
+
+.multipart-codeblock pre:not(:first-child) {
+  margin-top: unset
+}
+
+.multipart-codeblock pre:not(:last-child) {
+  margin-bottom: unset
 }
 
 #header-background {
@@ -313,4 +329,17 @@ ul li {
 
 ul, section p {
   max-width: 65ch;
+}
+
+blockquote {
+  background-color: var(--btn-colour);
+  padding: .5em 1em .5em 1em;
+  border-left-style: solid;
+  border-left-width: 0.4rem;
+  border-radius: 0rem 0.5rem 0.5rem 0rem;
+  border-color: var(--information-colour);
+}
+
+blockquote *:first-child {
+  margin: unset;
 }
