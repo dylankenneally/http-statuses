@@ -32,7 +32,7 @@ p, h1, h2, h3, h4, h5, h6 {
   --text-colour: #F4F1D0;
   --text-colour-2: rgb(151, 157, 175);
   --background-colour: #101014;
-  --background-colour-2: #343434;
+  --background-colour-2: #272822;
   --btn-colour: #16171d;
   --btn-colour-2: #1f2128;
   --border-colour: rgb(155, 161, 180);
@@ -59,9 +59,16 @@ a {
   color: unset;
 }
 
-code {
+code[class*="language-"],
+pre[class*="language-"],
+pre, code {
   font-family: var(--font-monospace);
-  background: var(--background-colour-2);
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"],
+pre, code {
+	background: var(--background-colour-2);
 }
 
 #header-background {
@@ -189,7 +196,12 @@ ol li:before {
   margin-bottom: .5rem;
 }
 
-.info p {
+
+ul li {
+  margin: 0.5em 0;
+}
+
+.takeaways p, .info p {
   margin: 1rem 0;
 }
 
@@ -299,6 +311,6 @@ ol li:before {
   font-size: 1rem;
 }
 
-section p {
+ul, section p {
   max-width: 65ch;
 }
