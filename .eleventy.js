@@ -45,25 +45,28 @@ function infoSvg(id) {
 }
 
 module.exports = (eleventyConfig) => {
-  eleventyConfig.setBrowserSyncConfig({
-    // auto open the browser when we use `npx eleventy --serve` (i.e. when we use `npm start`)
-    open: true,
-
-    // Add 404 support to browser sync
-    callbacks: {
-      ready: (err, bs) => {
-        bs.addMiddleware('*', (req, res) => {
-          if (!fs.existsSync(_404page)) {
-            throw new Error(`Failed to find the 404 page, expected it to be at ${_404page}`);
-          }
-
-          res.writeHead(404, { 'Content-Type': 'text/html; charset=UTF-8' });
-          res.write(fs.readFileSync(_404page));
-          res.end();
-        });
-      }
-    }
+  eleventyConfig.setServerOptions({
+    domDiff: false, // 11ty dev server & DOM diffing doesn't play well with JS
   });
+  // eleventyConfig.setBrowserSyncConfig({
+  //   // auto open the browser when we use `npx eleventy --serve` (i.e. when we use `npm start`)
+  //   open: true,
+
+  //   // Add 404 support to browser sync
+  //   callbacks: {
+  //     ready: (err, bs) => {
+  //       bs.addMiddleware('*', (req, res) => {
+  //         if (!fs.existsSync(_404page)) {
+  //           throw new Error(`Failed to find the 404 page, expected it to be at ${_404page}`);
+  //         }
+
+  //         res.writeHead(404, { 'Content-Type': 'text/html; charset=UTF-8' });
+  //         res.write(fs.readFileSync(_404page));
+  //         res.end();
+  //       });
+  //     }
+  //   }
+  // });
 
   const cssDir = `${dir.input}/css/`;
   eleventyConfig.addPassthroughCopy(cssDir);
