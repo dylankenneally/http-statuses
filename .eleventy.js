@@ -8,9 +8,9 @@ const dir = {
   input: 'src',
 
   // sub directories from ./src/
-  data: "_data",
-  includes: "_includes",
-  layouts: "_layouts",
+  data: "data",
+  includes: "includes",
+  layouts: "layouts",
 
   output: 'build'
 };
