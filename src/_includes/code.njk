@@ -79,10 +79,12 @@
   <h2>Takeaways</h2>
   {{ content | safe }}
 </section>
+{% if (body) %}
 <section class="info">
   <h2>Information</h2>
   {{ body | markdown | safe }}
 </section>
+{% endif %}
 <section>
   <h2>Further Reading</h2>
   {% useSvgExternalLink %}
