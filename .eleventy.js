@@ -6,6 +6,12 @@ require('dotenv').config();
 
 const dir = {
   input: 'src',
+
+  // sub directories from ./src/
+  data: "_data",
+  includes: "_includes",
+  layouts: "_layouts",
+
   output: 'build'
 };
 
