@@ -15,12 +15,17 @@ seeAlso:
 standard: false
 experimental: true
 deprecated: true
-body: |
-  The `body` content
-
-
-  para 2.
 ---
+
+{% admonition "Generally up at the **top**." | markdown %}
+
+## Takeaways
 
 1. First `takeaway` point
 1. etc.
+
+## Information
+
+The `body` content
+
+para 2.

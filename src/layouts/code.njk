@@ -65,17 +65,9 @@
         {% endif %}
       </section>
 
-      <section class="takeaways">
-        <h2>{{ strings.takeaways }}</h2>
+      <section class="content">
         {{ content | safe }}
       </section>
-
-      {% if (body) %}
-      <section class="info">
-        <h2>{{ strings.information }}</h2>
-        {{ body | markdown | safe }}
-      </section>
-      {% endif %}
 
       {% if (seeAlso) %}
       <section>
