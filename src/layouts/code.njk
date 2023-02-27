@@ -1,121 +1,133 @@
+{# todo: use a base
 {% extends "base.njk" %}
+#}
 
-{% block nav %}
-<style>
-  :root {
-    {% if (code < 200) %}   --header-background: var(--information-colour);
-    {% elif (code < 300) %} --header-background: var(--success-colour);
-    {% elif (code < 400) %} --header-background: var(--redirect-colour);
-    {% elif (code < 500) %} --header-background: var(--client-error-colour);
-    {% else %}              --header-background: var(--server-error-colour);
-    {% endif %}
-  }
-</style>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% if (title) %}{{ title }} — {% endif %}{{ site.name }}</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link href="https://fonts.gstatic.com" crossorigin rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=IBM+Plex+Sans:wght@400;700&display=swap" rel="stylesheet" />
+    <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
+    <link href="{{ '/css/style.css' | url }}" rel="stylesheet" />
+    <style>
+      :root {
+        {% if (code < 200) %}   --header-background: var(--information-colour);
+        {% elif (code < 300) %} --header-background: var(--success-colour);
+        {% elif (code < 400) %} --header-background: var(--redirect-colour);
+        {% elif (code < 500) %} --header-background: var(--client-error-colour);
+        {% else %}              --header-background: var(--server-error-colour);
+        {% endif %}
+      }
+    </style>
+  </head>
+  <body>
 
-<a href={{ '/' | url }} class="button">
-  <!-- grid icon -->
-  <svg viewBox="0 0 100 100">
-    <path d="M12.5 33.5h20a1 1 0 001-1v-20a1 1 0 00-1-1h-20a1 1 0 00-1 1v20a1 1 0 001 1zm27.5.0h20a1 1 0 001-1v-20a1 1 0 00-1-1H40a1 1 0 00-1 1v20a1 1 0 001 1zm47.5-22h-20a1 1 0 00-1 1v20a1 1 0 001 1h20a1 1 0 001-1v-20a1 1 0 00-1-1zM12.5 61h20a1 1 0 001-1V40a1 1 0 00-1-1h-20a1 1 0 00-1 1v20a1 1 0 001 1zM40 61h20a1 1 0 001-1V40a1 1 0 00-1-1H40a1 1 0 00-1 1v20a1 1 0 001 1zm47.5-22h-20a1 1 0 00-1 1v20a1 1 0 001 1h20a1 1 0 001-1V40a1 1 0 00-1-1zm-75 49.5h20a1 1 0 001-1v-20a1 1 0 00-1-1h-20a1 1 0 00-1 1v20a1 1 0 001 1zm27.5.0h20a1 1 0 001-1v-20a1 1 0 00-1-1H40a1 1 0 00-1 1v20a1 1 0 001 1zm47.5-22h-20a1 1 0 00-1 1v20a1 1 0 001 1h20a1 1 0 001-1v-20a1 1 0 00-1-1z"></path>
-  </svg>
-  View All
-</a>
-{% endblock %}
-
-{% block header %}
-<div>
-  <h1 class="banner-title">{{ code }} {{ name }}</h1>
-</div>
-<div>
-  {% if (code < 200) %}
-  {% headerSVG "info" %}
-  {% elif (code < 300) %}
-  {% headerSVG "success" %}
-  {% elif (code < 400) %}
-  {% headerSVG "redirect" %}
-  {% elif (code < 500) %}
-  {% headerSVG "client-error" %}
-  {% else %}
-  {% headerSVG "server-error" %}
-  {% endif %}
-</div>
-{% endblock %}
-
-{% block content %}
-<section>
-  <h2>Overview</h2>
-  {{ overview | markdown | safe }}
-  {% if (standard === false) %}
-  <p class="overview-note">
-    <svg viewBox="0 0 24 24" class="inline-svg feather-svg">
-      <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
-      <line x1="12" y1="9" x2="12" y2="13"></line>
-      <line x1="12" y1="17" x2="12.01" y2="17"></line>
-    </svg>
-    This is a none standard status code.
-  </p>
-  {% endif %}
-  {% if (experimental) %}
-  <p class="overview-note">
-    <svg viewBox="0 0 24 24" class="inline-svg">
-      <rect fill="none" height="24" width="24"/>
-      <path d="M13,11.33L18,18H6l5-6.67V6h2 M15.96,4H8.04C7.62,4,7.39,4.48,7.65,4.81L9,6.5v4.17L3.2,18.4C2.71,19.06,3.18,20,4,20h16 c0.82,0,1.29-0.94,0.8-1.6L15,10.67V6.5l1.35-1.69C16.61,4.48,16.38,4,15.96,4L15.96,4z"/>
-    </svg>
-    This status code is experimental.
-  </p>
-  {% endif %}
-  {% if (deprecated) %}
-  <p class="overview-note">
-    <svg viewBox="0 0 24 24" class="inline-svg feather-svg">
-      <polyline points="3 6 5 6 21 6"></polyline>
-      <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
-      <line x1="10" y1="11" x2="10" y2="17"></line>
-      <line x1="14" y1="11" x2="14" y2="17"></line>
-    </svg>
-    This status code has been deprecated.
-  </p>
-  {% endif %}
-</section>
-<section class="takeaways">
-  <h2>Takeaways</h2>
-  {{ content | safe }}
-</section>
-{% if (body) %}
-<section class="info">
-  <h2>Information</h2>
-  {{ body | markdown | safe }}
-</section>
-{% endif %}
-<section>
-  <h2>Further Reading</h2>
-  {% useSvgExternalLink %}
-
-  <a href="{{ spec }}" target="_blank">
-    <div class="slat">
-      <h3>Specification</h3>
-      <div>
-        <p>{{ title }}{% if (standard !== false) %} | The HTTP Working Group{% endif %}</p>
-        {% svgExternalLink %}
+    <header id="top">
+      <nav>{% include "viewAllBtn.njk" %}</nav>
+      <div class="banner container">
+        <h1 class="banner-title">{{ code }} {{ name }}</h1>
+        <div>
+          {% if (code < 200) %}   <span class="material-symbols-outlined">{% include "info_bold.svg" %}</span>
+          {% elif (code < 300) %} <span class="material-symbols-outlined">{% include "success_bold.svg" %}</span>
+          {% elif (code < 400) %} <span class="material-symbols-outlined">{% include "redirect_bold.svg" %}</span>
+          {% elif (code < 500) %} <span class="material-symbols-outlined">{% include "client_error_bold.svg" %}</span>
+          {% else %}              <span class="material-symbols-outlined">{% include "server_error_bold.svg" %}</span>
+          {% endif %}
+        </div>
       </div>
-    </div>
-  </a>
+    </header>
 
-  {% for item in more %}
-  <a href="{{ item.url }}" target="_blank">
-    <div class="slat">
-      <h3>{{ item.title }}</h3>
-      <div>
-        <p>{{ item.from }}</p>
-        {% svgExternalLink %}
+    <main>
+      <section>
+        <h2>{{ strings.overview }}</h2>
+        {{ overview | markdown | safe }}
+        {% if (standard === false) %}
+        <p class="overview-note container">
+          <span class="material-symbols-outlined">{% include "warning.svg" %}</span>
+          {{ strings.nonStandardCode }}
+        </p>
+        {% endif %}
+        {% if (experimental) %}
+        <p class="overview-note container">
+          <span class="material-symbols-outlined">{% include "beaker.svg" %}</span>
+          {{ strings.experimentalCode }}
+        </p>
+        {% endif %}
+        {% if (deprecated) %}
+        <p class="overview-note container">
+          <span class="material-symbols-outlined">{% include "trash.svg" %}</span>
+          {{ strings.deprecatedCode }}
+        </p>
+        {% endif %}
+      </section>
+
+      <section class="takeaways">
+        <h2>{{ strings.takeaways }}</h2>
+        {{ content | safe }}
+      </section>
+
+      {% if (body) %}
+      <section class="info">
+        <h2>{{ strings.information }}</h2>
+        {{ body | markdown | safe }}
+      </section>
+      {% endif %}
+
+      {% if (seeAlso) %}
+      <section>
+        <h2>{{ strings.related }}</h2>
+        TODO: the see-also section in the code files, optional
+        related code(s): {{ seeAlso }}
+      </section>
+      {% endif %}
+
+      <section>
+        <h2>{{ strings.furtherReading }}</h2>
+        <a href="{{ spec }}" target="_blank">
+          <div class="slat">
+            <h3>{{ strings.specification}}</h3>
+            <div>
+              <p>{{ title }}{% if (standard !== false) %} | {{ strings.httpWorkingGroup }}{% endif %}</p>
+              <span class="material-symbols-outlined">{% include "open_new_tab.svg" %}</span>
+            </div>
+          </div>
+        </a>
+
+        {% for item in more %}
+        <a href="{{ item.url }}" target="_blank">
+          <div class="slat">
+            <h3>{{ item.title }}</h3>
+            <div>
+              <p>{{ item.from }}</p>
+              <span class="material-symbols-outlined">{% include "open_new_tab.svg" %}</span>
+            </div>
+          </div>
+        </a>
+        {% endfor %}
+      </section>
+    </main>
+
+    <a href="#top">
+      <div id="back-to-top">
+        <span class="material-symbols-outlined">{% include "up_arrow.svg" %}</span>
       </div>
-    </div>
-  </a>
-  {% endfor %}
-</section>
-{% if (seeAlso) %}
-<section>
-  <h2>Related</h2>
-  TODO: the see-also section in the code files, optional
-  related code(s): {{ seeAlso }}
-</section>
-{% endif %}
-{% endblock %}
+    </a>
+
+    {# <footer>todo:</footer> #}
+    <script>
+      // Show/hide the back to top button based on the current scroll point
+      const btn = document.getElementById('back-to-top');
+      window.onscroll = () => {
+        if (document.body.scrollTop > 250 || document.documentElement.scrollTop > 250) {
+          btn.classList.add('visible');
+        } else {
+          btn.classList.remove('visible');
+        }
+      };
+    </script>
+  </body>
+</html>
