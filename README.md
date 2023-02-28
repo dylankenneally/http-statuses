@@ -41,7 +41,7 @@ The following environment variables can be overridden to control the build proce
 
 | Variable | Default | Purpose |
 | - | - | - |
-| `DEPLOY_PATH` | `/` | The root **deployment directory**.<br><br> By default, the app is built to be deployed in the root directory (`/`) of a given domain/subdomain. If you are deploying to a subdirectory, as is the case with the [GitHub Pages] deployment, set the variable to be the name of the subdirectory. |
+| `DEPLOY_PATH` | `/` | The root **deployment directory**.<br><br> By default, the app is built to be deployed in the root directory (`/`) of a given domain/subdomain. If you are deploying to a subdirectory, set the variable to be the name of the subdirectory. |
 
 Default values are stored in the [`.env`](./.env) file in the root of the repository.
 
