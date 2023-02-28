@@ -33,6 +33,13 @@ function admonition(content) {
     ${content}</blockquote>`;
 }
 
+// get a sorted collection of code data files (type: undefined (default): all, 1: informational, 2: successful, 3: redirection, 4: client error, 5: server error)
+function codes(collection, type) {
+  return collection
+    .getFilteredByGlob(`${dir.input}/codes/${type || ''}*.md`)
+    .sort((a, b) => (Number(a.data.code) < Number(b.data.code) ? -1 : 1));
+}
+
 module.exports = (eleventyConfig) => {
   eleventyConfig.setServerOptions({
     /* Use browsersync, not the 11ty dev server. the 11ty dev server has the following problems:
@@ -68,6 +75,13 @@ module.exports = (eleventyConfig) => {
   eleventyConfig.addFilter('markdown', (value) => md.render(value));
   eleventyConfig.addShortcode('admonition', admonition);
   eleventyConfig.addPlugin(syntaxHighlight);
+
+  eleventyConfig.addCollection('codes', (collection) => codes(collection));
+  eleventyConfig.addCollection('informational', (collection) => codes(collection, 1));
+  eleventyConfig.addCollection('successful', (collection) => codes(collection, 2));
+  eleventyConfig.addCollection('redirection', (collection) => codes(collection, 3));
+  eleventyConfig.addCollection('client error', (collection) => codes(collection, 4));
+  eleventyConfig.addCollection('server error', (collection) => codes(collection, 5));
 
   return {
     dir,
