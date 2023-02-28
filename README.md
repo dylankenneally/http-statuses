@@ -1,10 +1,10 @@
 # HTTP statuses
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/c9e88fc0-864a-4781-8ff2-1b0b98cc3e21/deploy-status)](https://app.netlify.com/sites/httpstatuses/deploys) [![Build & Deploy to GitHub Pages](https://github.com/dylankenneally/http-statuses/actions/workflows/build-and-deploy.yml/badge.svg)](https://github.com/dylankenneally/http-statuses/actions/workflows/build-and-deploy.yml)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/c9e88fc0-864a-4781-8ff2-1b0b98cc3e21/deploy-status)](https://app.netlify.com/sites/httpstatuses/deploys)
 
 An easy to use reference for HTTP status codes.
 
-This reference has been built so I can experiment with [11ty]. Changes to this repository are automatically deployed as a [Netlify app] and to [GitHub pages].
+This reference has been built so I can experiment with [11ty]. Changes to this repository are automatically deployed as a [Netlify app], hosted on [kenneally.dev].
 
 ## To build and run
 
@@ -220,7 +220,7 @@ ol.footnotes-list {
 <!-- Links in this doc -->
 [11ty]: https://11ty.dev/
 [Netlify app]: https://httpstatuses.netlify.app/
-[GitHub pages]: https://dylankenneally.github.io/http-statuses/
+[kenneally.dev]: https://httpstatuses.kenneally.dev/
 [Node.js]: https://nodejs.org/en/
 
 #### Minify output
