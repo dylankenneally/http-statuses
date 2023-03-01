@@ -370,6 +370,7 @@ blockquote .material-symbols-outlined p {
 .image-background_image {
   overflow: hidden;
   object-fit: cover;
+  border-radius: .5em;
 }
 
 .image-background_content {
