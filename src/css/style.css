@@ -127,6 +127,26 @@ blockquote {
   border-color: var(--information-colour);
 }
 
+.informational * {
+  background: var(--information-colour);
+}
+
+.successful * {
+  background: var(--success-colour);
+}
+
+.redirect * {
+  background: var(--redirect-colour);
+}
+
+.client-error * {
+  background: var(--client-error-colour);
+}
+
+.server-error * {
+  background: var(--server-error-colour);
+}
+
 .banner {
   flex-wrap: wrap;
   padding: 0 1em;
@@ -322,7 +342,73 @@ blockquote .material-symbols-outlined p {
   display: inline-block;
 }
 
-@media(min-width: 800px) {
+.card-layout {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card-layout_item {
+  flex: 1 0 40%;
+  margin: .5rem;
+}
+
+.image-background_container {
+  position: relative;
+  width: 10rem;
+  height: 10rem;
+}
+
+.image-background_image,
+.image-background_content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.image-background_image {
+  overflow: hidden;
+  object-fit: cover;
+}
+
+.image-background_content {
+  padding: .5em;
+}
+
+.ellipsis-content * {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden
+}
+
+.ellipsis-content p {
+  white-space: unset;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.image-background_image svg {
+  fill: var(--text-colour-2);
+  fill-opacity: .5;
+}
+
+.image-background_container:hover svg {
+  fill-opacity: unset;
+  fill: unset;
+  transition: fill 1s;
+}
+
+.hover-highlight {
+  transition: var(--btn-transition);
+}
+
+.hover-highlight:hover {
+  transform: scale(1.1);
+}
+
+@media(min-width: 768px) {
   .banner > * {
     flex: 1 0 40%;
   }
@@ -333,5 +419,9 @@ blockquote .material-symbols-outlined p {
 
   .banner .material-symbols-outlined svg {
     max-width: 50%;
+  }
+
+  .card-layout_item {
+    flex: 1 0 30%;
   }
 }

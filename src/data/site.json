@@ -1,3 +1,4 @@
 {
-	"name": "HTTP Statuses"
+  "name": "HTTP Statuses",
+  "host": "https://httpstatuses.kenneally.dev"
 }
