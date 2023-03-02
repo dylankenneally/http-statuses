@@ -4,7 +4,6 @@
 
 {% set metaDescription = "HTTP status code " + code + " " + name + ": " + overview %}
 
-{# todo: images in the build #}
 {% if (code < 200)    %} {% set metaImage = "/images/informational.jpg" %}
 {% elif (code < 300)  %} {% set metaImage = "/images/successful.jpg" %}
 {% elif (code < 400)  %} {% set metaImage = "/images/redirect.jpg" %}

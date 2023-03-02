@@ -67,9 +67,11 @@ module.exports = (eleventyConfig) => {
     }
   });
 
-  const cssDir = `${dir.input}/css/`;
-  eleventyConfig.addPassthroughCopy(cssDir);
-  eleventyConfig.addWatchTarget(cssDir);
+  const externalFilesDirs = [`${dir.input}/css/`, `${dir.input}/images/`];
+  externalFilesDirs.forEach((directory) => {
+    eleventyConfig.addPassthroughCopy(directory);
+    eleventyConfig.addWatchTarget(directory);
+  });
 
   const md = markdownIt({ html: true });
   eleventyConfig.addFilter('markdown', (value) => md.render(value));
