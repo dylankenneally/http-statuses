@@ -1,4 +1,6 @@
 {
   "name": "HTTP Statuses",
-  "host": "https://httpstatuses.kenneally.dev"
+  "host": "https://httpstatuses.kenneally.dev",
+  "description": "An easy to use reference for HTTP status codes.",
+  "local": "en"
 }

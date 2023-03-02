@@ -1,0 +1,49 @@
+{# inputs:
+    metaTitle:        (optional) title for the page and social media
+    metaDescription:  (optional) description for the meta data and social media
+    metaImage:        (optional) URL for an image used in social media links
+#}
+
+{% if not metaTitle %}
+  {% if site.name === title %}
+    {% set metaTitle = title %}
+  {% else %}
+    {% set metaTitle = title + ' - ' + site.name %}
+  {% endif %}
+{% endif %}
+
+{% if not metaDescription %}
+  {% set metaDescription = site.description %}
+{% endif %}
+
+{% if not metaImage %}
+  {% set metaImage = "/images/site.jpg" %}
+{% endif %}
+
+{% set metaImage = site.host + metaImage %}
+
+{% set pageUrl = page.url | url %}
+{% set pageUrl = site.host + pageUrl %}
+
+<meta charset="utf-8" />
+<title>{{ metaTitle }}</title>
+<link rel="canonical" href="{{ pageUrl }}" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="index, follow" />
+
+<meta property="og:site_name" content="{{ site.name }}" />
+<meta property="og:title" content="{{ metaTitle }}" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="{{ pageUrl }}" />
+<meta property="og:locale" content="{{ site.locale }}" />
+{# todo: refactor strings for locale #}
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="og:image" content="{{ metaImage }}" />
+<meta name="twitter:image" content="{{ metaImage }}" />
+<meta property="og:image:alt" content="{{ metaTitle }}" />
+<meta name="twitter:image:alt" content="{{ metaTitle }}" />
+
+<meta name="description" content="{{ metaDescription | safe }}" />
+<meta name="twitter:description" content="{{ metaDescription | safe }}" />
+<meta property="og:description" content="{{ metaDescription | safe }}" />

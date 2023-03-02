@@ -2,29 +2,20 @@
 {% extends "base.njk" %}
 #}
 
+{% set metaDescription = "HTTP status code " + code + " " + name + ": " + overview %}
 
-{% set fullTitle = title + " - " + site.name %}
-{% set desc = "HTTP status code " + code + " " + name + ": " + overview %}
-{% set pageUrl = page.url | url %}
-{% set pageUrl = site.host + pageUrl %}
+{# todo: images in the build #}
+{% if (code < 200)    %} {% set metaImage = "/images/informational.jpg" %}
+{% elif (code < 300)  %} {% set metaImage = "/images/successful.jpg" %}
+{% elif (code < 400)  %} {% set metaImage = "/images/redirect.jpg" %}
+{% elif (code < 500)  %} {% set metaImage = "/images/client-error.jpg" %}
+{% else               %} {% set metaImage = "/images/server-error.jpg" %}
+{% endif %}
 
 <!doctype html>
-<html lang="en">
+<html lang="{{ site.locale }}">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{{ fullTitle }}</title>
-    <meta name="robots" content="index, follow" />
-    <meta name="description" content="{{ desc | safe }}">
-    <link rel="canonical" href="{{ pageUrl }}" />
-
-    <meta property="og:url" content="{{ pageUrl }}" />
-    <meta property="og:title" content="{{ fullTitle }}" />
-    <meta property="og:locale" content="en" />
-    <meta property="og:description" content="{{ desc | safe}}">
-    {# todo: <meta property="og:image" content="https://developer.mozilla.org/mdn-social-share.cd6c4a5a.png" /> #}
-    <meta property="twitter:card" content="summary_large_image" />
-
+    {% include "meta.njk" %}
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link href="https://fonts.gstatic.com" crossorigin rel="preconnect" />
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=IBM+Plex+Sans:wght@400;700&display=swap" rel="stylesheet" />
@@ -90,8 +81,6 @@
       <section>
         <h2>{{ strings.related }}</h2>
         {% set related = helpers.getRelatedContent(collections.codes, seeAlso) %}
-        {# {{seeAlso|dump}} #}
-        {# {{ related | log }} #}
         <div class="card-layout">
           {% for item in related %}
           <div class="image-background_container card-layout_item hover-highlight">
