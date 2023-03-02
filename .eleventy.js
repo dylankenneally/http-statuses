@@ -1,6 +1,7 @@
 const fs = require('fs');
 const markdownIt = require('markdown-it');
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+const rssPlugin = require('@11ty/eleventy-plugin-rss');
 
 require('dotenv').config();
 
@@ -77,6 +78,7 @@ module.exports = (eleventyConfig) => {
   eleventyConfig.addFilter('markdown', (value) => md.render(value));
   eleventyConfig.addShortcode('admonition', admonition);
   eleventyConfig.addPlugin(syntaxHighlight);
+  eleventyConfig.addPlugin(rssPlugin);
 
   eleventyConfig.addCollection('codes', (collection) => codes(collection));
   eleventyConfig.addCollection('informational', (collection) => codes(collection, 1));
