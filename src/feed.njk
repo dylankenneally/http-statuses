@@ -1,20 +1,23 @@
 ---
-permalink: "/feed.xml"
+permalink: "{{ site.feed }}"
+eleventyExcludeFromCollections: true
 ---
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>{{ site.name }}</title>
   <subtitle>{{ site.description }}</subtitle>
-  <link href="{{ site.host }}{{ site.rssLink }}" rel="self"/>
+  <link href="{{ site.host }}{{ site.feed }}" rel="self"/>
   <link href="{{ site.host }}/"/>
+  {#- todo: something fishy about these dates #}
+  {#- todo: add other pages, not just codes #}
   <updated>{{ collections.codes | rssLastUpdatedDate }}</updated>
   <id>{{ site.host }}</id>
   <author>
     <name>{{ site.authorName }}</name>
     <email>{{ site.authorEmail }}</email>
   </author>
-  {% for post in collections.codes %}
-    {% set absolutePostUrl %}{{ site.host }}{{ post.url | url }}{% endset %}
+  {%- for post in collections.codes %}
+    {%- set absolutePostUrl %}{{ site.host }}{{ post.url | url }}{% endset %}
     <entry>
       <title>{{ post.data.title }}</title>
       <link href="{{ absolutePostUrl }}"/>
@@ -24,5 +27,5 @@ permalink: "/feed.xml"
         {{ post.templateContent | safe }}
       ]]></content>
     </entry>
-  {% endfor %}
+  {%- endfor %}
 </feed>

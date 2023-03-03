@@ -5,5 +5,7 @@
   "locale": "en",
   "authorName": "Dylan Kenneally",
   "authorEmail": "hello@dylankenneally.com",
-  "rssLink": "/feed.xml"
+  "feed": "/feed.xml",
+  "map": "/sitemap.xml",
+  "robots": "/robots.txt"
 }
