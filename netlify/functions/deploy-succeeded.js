@@ -29,9 +29,8 @@ exports.handler = async (event) => {
     }
 
     console.log(`Submitting sitemap ${sitemapUrl} to Google`);
-    let r = await axios.get(`http://www.google.com/ping?sitemap=${sitemapUrl}`);
+    await axios.get(`http://www.google.com/ping?sitemap=${sitemapUrl}`);
     console.log(`... done`);
-    console.dir(r)
     return { statusCode: 200 };
   } catch (err) {
     console.error('Failed to submit sitemap to Google:');
