@@ -4,28 +4,27 @@ const sitemapUrl = process.env.SITEMAP_URL;
 
 // const axios = require("axios");
 
-console.log('*=*=*=*=* dep suc script');
-
 exports.handler = async (event) => {
-  console.log('*=*=*=*=* dep suc event');
+  console.log('Running post deployment script: Submitting sitemap to Google');
   if (!sitemapUrl) {
-    console.log('*=*=*=*=* no url');
+    const noSitemap = 'The sitemap URL is missing, no sitemap will be submitted';
+    console.error(noSitemap);
     return {
       statusCode: 400, /* bad request */
-      body: 'The sitemap URL is missing'
+      body: noSitemap
     };
   }
 
   try {
-    console.log('*=*=*=*=* paylod');
     const { payload } = JSON.parse(event.body);
     const { state, context } = payload;
 
     if (state !== stateCondition || context !== contextCondition) {
-      console.log(`*=*=*=*=* no con { state: ${stateCondition}, context: ${contextCondition} }, current: { state: ${state}, context: ${context} }`);
+      const invalidContext = `State and/or context mismatched. Required: { state: ${stateCondition}, context: ${contextCondition} }, current: { state: ${state}, context: ${context} }.`;
+      console.error(invalidContext);
       return {
         statusCode: 502, /* bad gateway */
-        body: `State and/or context mismatched. Required: { state: ${stateCondition}, context: ${contextCondition} }, current: { state: ${state}, context: ${context} }.`
+        body: invalidContext
       };
     }
 
@@ -33,7 +32,7 @@ exports.handler = async (event) => {
     // await axios.get(`http://www.google.com/ping?sitemap=${sitemapUrl}`);
     return { statusCode: 200 };
   } catch (err) {
-    console.log('*=*=*=*=* fucked');
+    console.error('Failed to submit sitemap to Google:');
     console.error(err);
     throw err;
   }
