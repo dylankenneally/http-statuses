@@ -2,7 +2,7 @@ const contextCondition = "production";
 const stateCondition = "ready";
 const sitemapUrl = process.env.SITEMAP_URL;
 
-// const axios = require("axios");
+const axios = require("axios");
 
 exports.handler = async (event) => {
   console.log('Running post deployment script: Submitting sitemap to Google');
@@ -29,7 +29,7 @@ exports.handler = async (event) => {
     }
 
     console.log(`Submitting sitemap ${sitemapUrl} to Google`);
-    // await axios.get(`http://www.google.com/ping?sitemap=${sitemapUrl}`);
+    await axios.get(`http://www.google.com/ping?sitemap=${sitemapUrl}`);
     return { statusCode: 200 };
   } catch (err) {
     console.error('Failed to submit sitemap to Google:');
