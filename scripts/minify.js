@@ -1,4 +1,4 @@
-/* Minifies HTML files, to be used post-build & pre-deployment.
+/* Minifies HTML & CSS files, to be used post-build & pre-deployment.
     Run as: `node minify.js <files to minify>`
 */
 
