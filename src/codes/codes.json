@@ -1,4 +1,4 @@
 {
-    "permalink": "{{ page.fileSlug }}/index.html",
-    "layout": "code"
+  "permalink": "{{ page.fileSlug }}/index.html",
+  "layout": "code"
 }
