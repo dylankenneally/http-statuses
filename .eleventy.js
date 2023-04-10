@@ -23,7 +23,7 @@ if (!fs.existsSync(_404input)) {
   throw new Error(`Failed to find the input for the 404 page, expected it to be at ${_404input}`);
 }
 
-const _404page = `${dir.output}/404.html`;
+const _404page = `${dir.output}/not-found.html`;
 
 // provide an admonition as a stylised block quote
 function admonition(content) {
