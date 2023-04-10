@@ -1,0 +1,11 @@
+# Settings in the [build] context are global and are applied to all contexts
+# unless otherwise overridden by more specific contexts.
+[build]
+  publish = "build/"
+  command = "npm run build"
+  functions = "netlify/functions/"
+
+[[redirects]]
+  from = "/*"
+  to = "/not-found.html"
+  status = 404
