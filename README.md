@@ -60,7 +60,7 @@ Focus on playing with 11ty, make notes on findings.
 
 - [ ] 404
 - [ ] about/info
-- [ ] home page
+- [ ] home page, https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
 - [ ] overview of requests & responses model? overview of http as a protocol? NB: this is a reference to status codes, not http, but for context ...?
 - [ ] related codes (bottom of codes.njk)
 
