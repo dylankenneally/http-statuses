@@ -106,7 +106,7 @@
 
       <section>
         <h2>{{ strings.furtherReading }}</h2>
-        <a href="{{ spec }}" target="_blank" rel="nofollow external">
+        <a href="{{ spec }}" target="_blank" rel="nofollow external noopener noreferrer">
           <div class="slat">
             <h3>{{ strings.specification}}</h3>
             <div>
@@ -117,7 +117,7 @@
         </a>
 
         {% for item in more %}
-        <a href="{{ item.url }}" target="_blank" rel="nofollow external">
+        <a href="{{ item.url }}" target="_blank" rel="nofollow external noopener noreferrer">
           <div class="slat">
             <h3>{{ item.title }}</h3>
             <div>
