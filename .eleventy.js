@@ -2,7 +2,7 @@ const fs = require('fs');
 const markdownIt = require('markdown-it');
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const rssPlugin = require('@11ty/eleventy-plugin-rss');
-const faviconPlugin = require('eleventy-favicon');
+const faviconsPlugin = require("eleventy-plugin-gen-favicons");
 
 require('dotenv').config();
 
@@ -80,7 +80,7 @@ module.exports = (eleventyConfig) => {
   eleventyConfig.addShortcode('admonition', admonition);
   eleventyConfig.addPlugin(syntaxHighlight);
   eleventyConfig.addPlugin(rssPlugin);
-  eleventyConfig.addPlugin(faviconPlugin, { destination: dir.output });
+  eleventyConfig.addPlugin(faviconsPlugin, { outputDir: dir.output });
 
   eleventyConfig.addCollection('codes', (collection) => codes(collection));
   eleventyConfig.addCollection('informational', (collection) => codes(collection, 1));
