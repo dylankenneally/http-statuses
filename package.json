@@ -1,7 +1,7 @@
 {
   "name": "httpstatuses",
   "version": "1.0.0",
-  "description": "A reference guide for HTTP statuses",
+  "description": "An easy to use reference for HTTP status codes",
   "main": "index.js",
   "scripts": {
     "start": "npm run clean && eleventy --serve",
