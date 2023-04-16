@@ -11,6 +11,7 @@ const l10n = {
     experimentalCode: "This status code is experimental.",
     deprecatedCode: "This status code has been deprecated.",
     httpWorkingGroup: "The HTTP Working Group",
+    metaDescription: (code, name, overview) => `HTTP status code ${code} ${name}: ${overview}`,
   },
 };
 
@@ -24,4 +25,5 @@ module.exports = {
   experimentalCode: l10n[site.locale].experimentalCode,
   deprecatedCode: l10n[site.locale].deprecatedCode,
   httpWorkingGroup: l10n[site.locale].httpWorkingGroup,
+  metaDescription: l10n[site.locale].metaDescription,
 };

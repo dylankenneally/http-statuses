@@ -52,23 +52,29 @@ Note that changes to these variables are not noticed while the development serve
 
 Parts of the copy (text content) is courtesy of [httpstatuses.io]. Other parts of the copy are adapted from the [MDN docs]. The UX for the site is inspired by [Laws of UX] by [Jon Yablonski]. Some imagery is courtesy of [Google Font Icons].
 
+<!-- markdownlint-disable-next-line no-trailing-punctuation -->
 ## TODO:
 
 Focus on playing with 11ty, make notes on findings.
 
-#### content
+Add skip to main: <https://web.dev/learn/html/navigation/#skip-to-content-link>
+
+### Snags list
+
+- [ ] SVG's are in the output files multiple times, use `use` instead
+
+### content
 
 - [ ] 404
 - [ ] about/info
-- [ ] home page, https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
+- [ ] home page, <https://developer.mozilla.org/en-US/docs/Web/HTTP/Status>
 - [ ] overview of requests & responses model? overview of http as a protocol? NB: this is a reference to status codes, not http, but for context ...?
-- [ ] related codes (bottom of codes.njk)
 
-#### features
+### features
 
 - [ ] search, quick access
 
-#### other
+### other
 
 - [ ] mdo's best practices - ensure followed
 - [ ] footer, copyright, etc

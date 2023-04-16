@@ -12,21 +12,19 @@
 {# todo: include/partials it #}
 <div class="card-layout">
   {% for item in collections.codes %}
-  <div class="image-background_container card-layout_item hover-highlight">
-    <a href={{item.url | url }}>
-      {% if (item.data.code < 200) %}   <div class="material-symbols-outlined image-background_image informational">{% include "info_bold.svg" %}</div>
-      {% elif (item.data.code < 300) %} <div class="material-symbols-outlined image-background_image successful">{% include "success_bold.svg" %}</div>
-      {% elif (item.data.code < 400) %} <div class="material-symbols-outlined image-background_image redirect">{% include "redirect_bold.svg" %}</div>
-      {% elif (item.data.code < 500) %} <div class="material-symbols-outlined image-background_image client-error">{% include "client_error_bold.svg" %}</div>
-      {% else %}                        <div class="material-symbols-outlined image-background_image server-error">{% include "server_error_bold.svg" %}</div>
-      {% endif %}
+  <a href={{item.url | url }} class="image-background_container card-layout_item hover-highlight">
+    {% if (item.data.code < 200) %}   <div class="material-symbols-outlined image-background_image informational">{% include "info_bold.svg" %}</div>
+    {% elif (item.data.code < 300) %} <div class="material-symbols-outlined image-background_image successful">{% include "success_bold.svg" %}</div>
+    {% elif (item.data.code < 400) %} <div class="material-symbols-outlined image-background_image redirect">{% include "redirect_bold.svg" %}</div>
+    {% elif (item.data.code < 500) %} <div class="material-symbols-outlined image-background_image client-error">{% include "client_error_bold.svg" %}</div>
+    {% else %}                        <div class="material-symbols-outlined image-background_image server-error">{% include "server_error_bold.svg" %}</div>
+    {% endif %}
 
-      <div class="image-background_content ellipsis-content">
-        <h3>{{ item.data.title }}</h3>
-        {{- item.data.overview | markdown | safe -}}
-      </div>
-    </a>
-  </div>
+    <div class="image-background_content ellipsis-content">
+      <h3>{{ item.data.title }}</h3>
+      {{- item.data.overview | markdown | safe -}}
+    </div>
+  </a>
   {% endfor %}
 </div>
 
