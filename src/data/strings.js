@@ -12,6 +12,7 @@ const l10n = {
     deprecatedCode: "This status code has been deprecated.",
     httpWorkingGroup: "The HTTP Working Group",
     metaDescription: (code, name, overview) => `HTTP status code ${code} ${name}: ${overview}`,
+    skipToMain: "Skip To Main",
   },
 };
 
@@ -26,4 +27,5 @@ module.exports = {
   deprecatedCode: l10n[site.locale].deprecatedCode,
   httpWorkingGroup: l10n[site.locale].httpWorkingGroup,
   metaDescription: l10n[site.locale].metaDescription,
+  skipToMain: l10n[site.locale].skipToMain,
 };

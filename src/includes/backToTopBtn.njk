@@ -1,0 +1,15 @@
+<a href="#top" id="back-to-top" class="hover-highlight">
+  <span class="material-symbols-outlined">{% include "up_arrow.svg" %}</span>
+</a>
+
+<script>
+  // Show/hide the back to top button based on the current scroll point
+  const btn = document.getElementById('back-to-top');
+  window.onscroll = () => {
+    if (document.body.scrollTop > 250 || document.documentElement.scrollTop > 250) {
+      btn.classList.add('visible');
+    } else {
+      btn.classList.remove('visible');
+    }
+  };
+</script>

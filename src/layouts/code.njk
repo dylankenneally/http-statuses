@@ -33,7 +33,7 @@
     {% include "json-ld-script.njk" %}
   </head>
   <body>
-
+    <a class="skip-link button" href="#main">{{ strings.skipToMain }}</a>
     <header id="top">
       <nav>{% include "viewAllBtn.njk" %}</nav>
       <div class="banner container">
@@ -49,7 +49,7 @@
       </div>
     </header>
 
-    <main>
+    <main id="main">
       <section>
         <h2>{{ strings.overview }}</h2>
         {{ overview | markdown | safe }}
@@ -85,12 +85,12 @@
           {% for item in related %}
           <a href={{item.url | url }} class="image-background_container card-layout_item hover-highlight">
             <div class="image-background_content ellipsis-content">
-            {% if (item.data.code < 200) %}   <div class="material-symbols-outlined image-background_image informational">{% include "info_bold.svg" %}</div>
-            {% elif (item.data.code < 300) %} <div class="material-symbols-outlined image-background_image successful">{% include "success_bold.svg" %}</div>
-            {% elif (item.data.code < 400) %} <div class="material-symbols-outlined image-background_image redirect">{% include "redirect_bold.svg" %}</div>
-            {% elif (item.data.code < 500) %} <div class="material-symbols-outlined image-background_image client-error">{% include "client_error_bold.svg" %}</div>
-            {% else %}                        <div class="material-symbols-outlined image-background_image server-error">{% include "server_error_bold.svg" %}</div>
-            {% endif %}
+              {% if (item.data.code < 200) %}   <div class="material-symbols-outlined image-background_image informational">{% include "info_bold.svg" %}</div>
+              {% elif (item.data.code < 300) %} <div class="material-symbols-outlined image-background_image successful">{% include "success_bold.svg" %}</div>
+              {% elif (item.data.code < 400) %} <div class="material-symbols-outlined image-background_image redirect">{% include "redirect_bold.svg" %}</div>
+              {% elif (item.data.code < 500) %} <div class="material-symbols-outlined image-background_image client-error">{% include "client_error_bold.svg" %}</div>
+              {% else %}                        <div class="material-symbols-outlined image-background_image server-error">{% include "server_error_bold.svg" %}</div>
+              {% endif %}
 
               <h3>{{ item.data.title }}</h3>
               {{- item.data.overview | markdown | safe -}}
@@ -98,7 +98,6 @@
           </a>
           {% endfor %}
         </div>
-
       </section>
       {% endif %}
 
@@ -128,23 +127,8 @@
       </section>
     </main>
 
-    <a href="#top">
-      <div id="back-to-top" class="hover-highlight">
-        <span class="material-symbols-outlined">{% include "up_arrow.svg" %}</span>
-      </div>
-    </a>
+    <nav>{% include "backToTopBtn.njk" %}</nav>
 
     {# <footer>todo:</footer> #}
-    <script>
-      // Show/hide the back to top button based on the current scroll point
-      const btn = document.getElementById('back-to-top');
-      window.onscroll = () => {
-        if (document.body.scrollTop > 250 || document.documentElement.scrollTop > 250) {
-          btn.classList.add('visible');
-        } else {
-          btn.classList.remove('visible');
-        }
-      };
-    </script>
   </body>
 </html>
