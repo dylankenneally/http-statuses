@@ -1,4 +1,4 @@
-const site = require('./site');
+const { locale } = require('./site');
 
 const l10n = {
   en: {
@@ -16,16 +16,10 @@ const l10n = {
   },
 };
 
-module.exports = {
-  viewAll: l10n[site.locale].viewAll,
-  overview: l10n[site.locale].overview,
-  related: l10n[site.locale].related,
-  furtherReading: l10n[site.locale].furtherReading,
-  specification: l10n[site.locale].specification,
-  nonStandardCode: l10n[site.locale].nonStandardCode,
-  experimentalCode: l10n[site.locale].experimentalCode,
-  deprecatedCode: l10n[site.locale].deprecatedCode,
-  httpWorkingGroup: l10n[site.locale].httpWorkingGroup,
-  metaDescription: l10n[site.locale].metaDescription,
-  skipToMain: l10n[site.locale].skipToMain,
-};
+// Ensure the site locale is in present in the string table
+if (!(locale in l10n)) {
+  console.error(`The site locale (${locale}) is not available in l10n string table, no localisation data is present. This error is fatal.`);
+  process.exit(1);
+}
+
+module.exports = l10n[locale];

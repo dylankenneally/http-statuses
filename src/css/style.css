@@ -1,4 +1,3 @@
-/* CSS reset from https://www.joshwcomeau.com/css/custom-css-reset/ & then tweaked */
 *, *::before, *::after {
   box-sizing: border-box;
 }
