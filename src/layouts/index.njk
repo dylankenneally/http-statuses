@@ -1,0 +1,74 @@
+{% extends "base.njk" %}
+
+{% block content %}
+<section>
+  <h1 class="banner-title">WIP: Under development</h1>
+  {{ content | safe }}
+</section>
+
+<h2>Informational</h2>
+<div class="card-layout">
+  {% for item in collections.informational %}
+  <a href={{item.url | url }} class="image-background_container card-layout_item hover-highlight">
+    <div class="material-symbols-outlined image-background_image informational">{% include "info_bold.svg" %}</div>
+    <div class="image-background_content ellipsis-content">
+      <h3>{{ item.data.title }}</h3>
+      {{- item.data.overview | markdown | safe -}}
+    </div>
+  </a>
+  {% endfor %}
+</div>
+
+<h2>Successful</h2>
+<div class="card-layout">
+  {% for item in collections.successful %}
+  <a href={{item.url | url }} class="image-background_container card-layout_item hover-highlight">
+    <div class="material-symbols-outlined image-background_image successful">{% include "success_bold.svg" %}</div>
+    <div class="image-background_content ellipsis-content">
+      <h3>{{ item.data.title }}</h3>
+      {{- item.data.overview | markdown | safe -}}
+    </div>
+  </a>
+  {% endfor %}
+</div>
+
+<h2>Redirection</h2>
+<div class="card-layout">
+  {% for item in collections.redirection %}
+  <a href={{item.url | url }} class="image-background_container card-layout_item hover-highlight">
+    <div class="material-symbols-outlined image-background_image redirect">{% include "redirect_bold.svg" %}</div>
+    <div class="image-background_content ellipsis-content">
+      <h3>{{ item.data.title }}</h3>
+      {{- item.data.overview | markdown | safe -}}
+    </div>
+  </a>
+  {% endfor %}
+</div>
+
+<h2>Client error</h2>
+<div class="card-layout">
+  {% for item in collections['client error'] %}
+  <a href={{item.url | url }} class="image-background_container card-layout_item hover-highlight">
+    <div class="material-symbols-outlined image-background_image client-error">{% include "client_error_bold.svg" %}</div>
+    <div class="image-background_content ellipsis-content">
+      <h3>{{ item.data.title }}</h3>
+      {{- item.data.overview | markdown | safe -}}
+    </div>
+  </a>
+  {% endfor %}
+</div>
+
+<h2>Server error</h2>
+<div class="card-layout">
+  {% for item in collections['server error'] %}
+  <a href={{item.url | url }} class="image-background_container card-layout_item hover-highlight">
+    <div class="material-symbols-outlined image-background_image server-error">{% include "server_error_bold.svg" %}</div>
+    <div class="image-background_content ellipsis-content">
+      <h3>{{ item.data.title }}</h3>
+      {{- item.data.overview | markdown | safe -}}
+    </div>
+  </a>
+  {% endfor %}
+</div>
+
+{% endblock %}
