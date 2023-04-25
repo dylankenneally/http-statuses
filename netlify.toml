@@ -28,7 +28,6 @@
   # '208' selected as it has the largest output file size
   # '206' selected as it has the largest input file size
   [[plugins.inputs.audits]]
+    path = "/"
     path = "208"
-
-  [[plugins.inputs.audits]]
-    path = "208"
+    path = "206"
