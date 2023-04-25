@@ -5,15 +5,15 @@
 #}
 
 {% if not metaTitle %}
-  {% if site.name === title %}
+  {% if strings.siteName === title %}
     {% set metaTitle = title %}
   {% else %}
-    {% set metaTitle = title + ' - ' + site.name %}
+    {% set metaTitle = title + ' - ' + strings.siteName %}
   {% endif %}
 {% endif %}
 
 {% if not metaDescription %}
-  {% set metaDescription = site.description %}
+  {% set metaDescription = strings.siteDescription %}
 {% endif %}
 
 {% if not metaImage %}
@@ -30,10 +30,10 @@
 <link rel="canonical" href="{{ pageUrl }}" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="robots" content="index, follow" />
-{% favicons './src/images/favicon.svg', appleIconPadding=0, manifestData={name: site.name, short_name: site.name, start_url: '.', display: 'standalone', background_color: '#101014', description: site.description } %}
+{% favicons './src/images/favicon.svg', appleIconPadding=0, manifestData={name: strings.siteName, short_name: strings.siteName, start_url: '.', display: 'standalone', background_color: '#101014', description: strings.siteDescription } %}
 <link rel="alternate" type="application/rss+xml" href="{{ site.host }}{{ site.feed }}" />
 
-<meta property="og:site_name" content="{{ site.name }}" />
+<meta property="og:site_name" content="{{ strings.siteName }}" />
 <meta property="og:title" content="{{ metaTitle }}" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="{{ pageUrl }}" />

@@ -2,6 +2,8 @@ const { locale } = require('./site');
 
 const l10n = {
   en: {
+    siteName: "HTTP Statuses",
+    siteDescription: "An easy to use reference for HTTP status codes.",
     viewAll: "View All",
     overview: "Overview",
     related: "Related",
