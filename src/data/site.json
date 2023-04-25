@@ -1,11 +1,8 @@
 {
-  "name": "HTTP Statuses",
   "host": "https://httpstatuses.kenneally.dev",
-  "description": "An easy to use reference for HTTP status codes.",
   "locale": "en",
   "authorName": "Dylan Kenneally",
   "authorEmail": "hello@dylankenneally.com",
   "feed": "/feed.xml",
-  "map": "/sitemap.xml",
-  "robots": "/robots.txt"
+  "map": "/sitemap.xml"
 }
