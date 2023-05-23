@@ -33,6 +33,8 @@
     {% include "json-ld-script.njk" %}
   </head>
   <body>
+    {# todo: if you move to using 'base.njk', you won't need the following line #}
+    {% include "google-analytics.njk" %}
     <a class="skip-link button" href="#main">{{ strings.skipToMain }}</a>
     <header id="top">
       <nav>{% include "viewAllBtn.njk" %}</nav>
