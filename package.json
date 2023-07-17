@@ -22,7 +22,7 @@
     "@11ty/eleventy-plugin-rss": "^1.2.0",
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
     "@11ty/eleventy-server-browsersync": "^1.0.2",
-    "@netlify/plugin-lighthouse": "^4.1.1",
+    "@netlify/plugin-lighthouse": "^5.0.0",
     "dotenv": "^16.3.1",
     "eleventy-plugin-gen-favicons": "^1.1.2",
     "html-minifier": "^4.0.0",
