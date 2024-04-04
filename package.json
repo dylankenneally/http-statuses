@@ -23,12 +23,12 @@
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
     "@11ty/eleventy-server-browsersync": "^1.0.2",
     "@netlify/plugin-lighthouse": "^6.0.0",
-    "dotenv": "^16.4.4",
+    "dotenv": "^16.4.5",
     "eleventy-plugin-gen-favicons": "^1.1.2",
     "html-minifier": "^4.0.0",
     "rimraf": "^5.0.5"
   },
   "dependencies": {
-    "axios": "^1.6.7"
+    "axios": "^1.6.8"
   }
 }
