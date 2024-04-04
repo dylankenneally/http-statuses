@@ -10,7 +10,7 @@ This reference has been built so I can experiment with [11ty]. Changes to this r
 
 ### Prerequisites
 
-- [Node.js]. Version 18 has been used during the development of this project.
+- [Node.js]. Version 20.12.1 has been used during the development of this project.
 
 ### Getting the source code
 
