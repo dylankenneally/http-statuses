@@ -1,4 +1,4 @@
-const { locale } = require('./site');
+const { locale, authorName, authorEmail } = require('./site');
 
 const l10n = {
   en: {
@@ -15,6 +15,8 @@ const l10n = {
     httpWorkingGroup: "The HTTP Working Group",
     metaDescription: (code, name, overview) => `HTTP status code ${code} ${name}: ${overview}`,
     skipToMain: "Skip To Main",
+    authorName,
+    authorEmail,
   },
 };
 

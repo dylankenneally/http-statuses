@@ -2,11 +2,22 @@
 
 {% block content %}
 <section>
-  <h1 class="banner-title">WIP: Under development</h1>
+  <h1 class="banner-title">{{ strings.siteName }}</h1>
+  <p>{{ strings.siteDescription }}</p>
   {{ content | safe }}
 </section>
 
-<h2>Informational</h2>
+<nav class="main-nav">
+  <ul>
+    <li><a href="#informational">Informational</a></li>
+    <li><a href="#successful">Successful</a></li>
+    <li><a href="#redirection">Redirection</a></li>
+    <li><a href="#client-error">Client error</a></li>
+    <li><a href="#server-error">Server error</a></li>
+  </ul>
+</nav>
+
+<h2 id="informational">Informational</h2>
 <div class="card-layout">
   {% for item in collections.informational %}
   <a href={{item.url | url }} class="image-background_container card-layout_item hover-highlight">
@@ -19,7 +30,7 @@
   {% endfor %}
 </div>
 
-<h2>Successful</h2>
+<h2 id="successful">Successful</h2>
 <div class="card-layout">
   {% for item in collections.successful %}
   <a href={{item.url | url }} class="image-background_container card-layout_item hover-highlight">
@@ -32,7 +43,7 @@
   {% endfor %}
 </div>
 
-<h2>Redirection</h2>
+<h2 id="redirection">Redirection</h2>
 <div class="card-layout">
   {% for item in collections.redirection %}
   <a href={{item.url | url }} class="image-background_container card-layout_item hover-highlight">
@@ -45,7 +56,7 @@
   {% endfor %}
 </div>
 
-<h2>Client error</h2>
+<h2 id="client-error">Client error</h2>
 <div class="card-layout">
   {% for item in collections['client error'] %}
   <a href={{item.url | url }} class="image-background_container card-layout_item hover-highlight">
@@ -58,7 +69,7 @@
   {% endfor %}
 </div>
 
-<h2>Server error</h2>
+<h2 id="server-error">Server error</h2>
 <div class="card-layout">
   {% for item in collections['server error'] %}
   <a href={{item.url | url }} class="image-background_container card-layout_item hover-highlight">
@@ -70,5 +81,7 @@
   </a>
   {% endfor %}
 </div>
+
+<p class="main-footer">© {{ strings.authorName }} 2024. <a href="mailto:{{ strings.authorEmail }}">Contact</a></p>
 
 {% endblock %}

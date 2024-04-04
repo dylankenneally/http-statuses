@@ -81,6 +81,38 @@ nav {
   padding: .5em 0em 0em 1em;
 }
 
+.main-nav {
+  padding: unset;
+}
+
+.main-nav ul {
+  background-color: var(--btn-colour);
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+.main-nav ul > li {
+  margin-right: 1em;
+  font-size: smaller;
+  text-transform: uppercase;
+}
+
+.main-nav ul > li:hover,
+.main-footer a:hover {
+  text-decoration: underline;
+}
+
+.main-footer {
+  padding: 1em;
+  font-size: small;
+}
+
+.main-footer a {
+  text-transform: uppercase;
+}
+
 main {
   padding: 1em;
   margin: 0 auto;

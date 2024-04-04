@@ -8,4 +8,4 @@ All versions of the site are supported.
 
 Please report vulnerabilities privately by creating a [new advisory](https://github.com/dylankenneally/http-statuses/security/advisories/new).
 
-Once a submission is made, it will be triarged as quickly as possible.
+Once a submission is made, it will be triaged as quickly as possible.
