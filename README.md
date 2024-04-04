@@ -15,7 +15,7 @@ This reference has been built so I can experiment with [11ty]. Changes to this r
 ### Getting the source code
 
 ```bash
-git clone https://github.com/dylankenneally/http-statuses.git
+git clone git@github.com:dylankenneally/http-statuses.git
 cd http-statuses
 ```
 
