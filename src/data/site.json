@@ -2,7 +2,7 @@
   "host": "https://httpstatuses.kenneally.dev",
   "locale": "en",
   "authorName": "Dylan Kenneally",
-  "authorEmail": "hello@dylankenneally.com",
+  "authorEmail": "dylan.kenneally+httpstatuses@gmail.com",
   "feed": "/feed.xml",
   "map": "/sitemap.xml"
 }
