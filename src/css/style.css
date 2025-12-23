@@ -99,6 +99,12 @@ nav {
   text-transform: uppercase;
 }
 
+.about a {
+  font-style: italic;
+  font-size: smaller;
+}
+
+.about a:hover,
 .main-nav ul > li:hover,
 .main-footer a:hover {
   text-decoration: underline;

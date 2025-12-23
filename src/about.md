@@ -13,29 +13,31 @@ HTTP Statuses is an easy-to-use reference guide for HTTP response status codes. 
 
 HTTP status codes are fundamental to web communication, yet many developers find themselves repeatedly searching for what each code means. This reference was created to provide:
 
-- **Quick access** to status code information
-- **Clear explanations** in plain language
-- **Official specifications** linked directly to the HTTP Working Group
-- **Related codes** to help understand the context
-- **Further reading** for those who want to dive deeper
+- **Quick access** to status code information.
+- **Clear explanations** in plain language.
+- **Official specifications** linked directly to the HTTP Working Group.
+- **Related codes** to help understand the context.
+- **Further reading** for those who want to dive deeper.
 
 ## Status Code Categories
 
 HTTP status codes are grouped into five categories:
 
-- **1xx Informational** - The request was received and is being processed
-- **2xx Successful** - The request was successfully received, understood, and accepted
-- **3xx Redirection** - Further action needs to be taken to complete the request
-- **4xx Client Error** - The request contains bad syntax or cannot be fulfilled
-- **5xx Server Error** - The server failed to fulfill a valid request
+- **1xx Informational** - The request was received and is being processed.
+- **2xx Successful** - The request was successfully received, understood, and accepted.
+- **3xx Redirection** - Further action needs to be taken to complete the request.
+- **4xx Client Error** - The request contains bad syntax or cannot be fulfilled.
+- **5xx Server Error** - The server failed to fulfill a valid request.
 
 ## Sources & Credits
 
 The content on this site is compiled from authoritative sources including:
 
-- [HTTP Working Group Specifications](https://httpwg.org/specs/)
-- [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)
-- [httpstatuses.io](https://httpstatuses.io/)
+- [HTTP Working Group Specifications](https://httpwg.org/specs/).
+- [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status).
+- [httpstatuses.io](https://httpstatuses.io/).
+
+This project is open source and contributions are welcome, check out the [GitHub repository](https://github.com/dylankenneally/http-statuses).
 
 ## Technology
 
