@@ -43,32 +43,6 @@ function codes(collection, type) {
 }
 
 module.exports = (eleventyConfig) => {
-  eleventyConfig.setServerOptions({
-    /* Use browsersync, not the 11ty dev server. the 11ty dev server has the following problems:
-      - DOM diffing and hot reloading are not compatible with client side JS
-      - CORS issues with it's use of analytics (console pollution when debugging)
-      - doesn't open a browser on start up */
-    module: "@11ty/eleventy-server-browsersync",
-
-    // auto open the browser when we use `npx eleventy --serve` (i.e. when we use `npm start`)
-    open: true,
-
-    // Add 404 support to browser sync
-    callbacks: {
-      ready: (err, bs) => {
-        bs.addMiddleware('*', (req, res) => {
-          if (!fs.existsSync(_404page)) {
-            throw new Error(`Failed to find the 404 page, expected it to be at ${_404page}`);
-          }
-
-          res.writeHead(404, { 'Content-Type': 'text/html; charset=UTF-8' });
-          res.write(fs.readFileSync(_404page));
-          res.end();
-        });
-      }
-    }
-  });
-
   const externalFilesDirs = [`${dir.input}/css/`, `${dir.input}/images/`];
   externalFilesDirs.forEach((directory) => {
     eleventyConfig.addPassthroughCopy(directory);
