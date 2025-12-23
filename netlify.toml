@@ -16,13 +16,3 @@
 
 [[plugins]]
   package = "@netlify/plugin-lighthouse"
-
-  # audit /208/ & /206/ as well as the landing page
-  # '208' selected as it has the largest output file size
-  # '206' selected as it has the largest input file size
-  [[plugins.inputs.audits]]
-    path = "/"
-  [[plugins.inputs.audits]]
-    path = "208"
-  [[plugins.inputs.audits]]
-    path = "206"
