@@ -17,6 +17,9 @@
 [[plugins]]
   package = "@netlify/plugin-lighthouse"
 
+  [plugins.inputs.settings]
+    preset = "desktop" # Optionally run Lighthouse using a desktop configuration
+
   # audit /208/ & /206/ as well as the landing page
   # '208' selected as it has the largest output file size
   # '206' selected as it has the largest input file size
