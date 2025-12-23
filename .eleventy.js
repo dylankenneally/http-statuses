@@ -43,7 +43,7 @@ function codes(collection, type) {
 }
 
 module.exports = (eleventyConfig) => {
-  const externalFilesDirs = [`${dir.input}/css/`, `${dir.input}/images/`];
+  const externalFilesDirs = [`${dir.input}/css/`, `${dir.input}/images/`, `${dir.input}/js/`];
   externalFilesDirs.forEach((directory) => {
     eleventyConfig.addPassthroughCopy(directory);
     eleventyConfig.addWatchTarget(directory);

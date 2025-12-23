@@ -7,6 +7,21 @@
   {{ content | safe }}
 </section>
 
+<div class="search-container">
+  <div class="search-input-wrapper">
+    <input
+      type="text"
+      id="search-input"
+      class="search-input"
+      placeholder="Search HTTP status codes..."
+      aria-label="Search HTTP status codes"
+      autocomplete="off"
+    />
+    <span class="search-icon">{% include "search.svg" %}</span>
+  </div>
+  <div id="search-results" class="search-results" aria-live="polite"></div>
+</div>
+
 <nav class="main-nav">
   <ul>
     <li><a href="#informational">Informational</a></li>
