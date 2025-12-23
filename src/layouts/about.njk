@@ -1,0 +1,13 @@
+{% extends "base.njk" %}
+
+{% block content %}
+<section>
+  <h1 class="banner-title">{{ title }}</h1>
+  {{ content | safe }}
+</section>
+
+<nav>{% include "viewAllBtn.njk" %}</nav>
+
+{% include "footer.njk" %}
+
+{% endblock %}
