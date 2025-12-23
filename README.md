@@ -29,6 +29,7 @@ npm start # will auto open your browser with the app in it
 ### Available scripts
 
 The following scripts are available once `npm install` has been ran.
+
 | Script | Action |
 | - | - |
 | `npm start` | **Starts the development server** and opens your browser with the app in it. `clean` is ran first. |
@@ -63,13 +64,6 @@ Add skip to main: <https://web.dev/learn/html/navigation/#skip-to-content-link>
 
 - [ ] SVG's are in the output files multiple times, use `use` instead
 
-### content
-
-- [ ] 404
-- [ ] about/info
-- [ ] home page, <https://developer.mozilla.org/en-US/docs/Web/HTTP/Status>
-- [ ] overview of requests & responses model? overview of http as a protocol? NB: this is a reference to status codes, not http, but for context ...?
-
 ### features
 
 - [ ] search, quick access
@@ -77,9 +71,6 @@ Add skip to main: <https://web.dev/learn/html/navigation/#skip-to-content-link>
 ### other
 
 - [ ] mdo's best practices - ensure followed
-- [ ] footer, copyright, etc
-  - [ ] use <https://11ty.rocks/eleventyjs/dates/> ?
-  - [ ] use via an include in the template layout
 
 <!-- Links in this doc -->
 [11ty]: https://11ty.dev/
