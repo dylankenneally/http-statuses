@@ -44,48 +44,49 @@
     if (!query.trim()) return [];
     const q = query.toLowerCase().trim();
 
-    return data.filter(item => {
-      return (
-        item.code.toLowerCase().includes(q) ||
-        item.name.toLowerCase().includes(q) ||
-        item.title.toLowerCase().includes(q) ||
-        item.overview.toLowerCase().includes(q)
-      );
-    }).sort((a, b) => {
-      // Prioritize exact code matches
-      const aCodeMatch = a.code.toLowerCase() === q;
-      const bCodeMatch = b.code.toLowerCase() === q;
-      if (aCodeMatch && !bCodeMatch) return -1;
-      if (bCodeMatch && !aCodeMatch) return 1;
+    return data
+      .filter((item) => {
+        return item.code.toLowerCase().includes(q) || item.name.toLowerCase().includes(q) || item.title.toLowerCase().includes(q) || item.overview.toLowerCase().includes(q);
+      })
+      .sort((a, b) => {
+        // Prioritize exact code matches
+        const aCodeMatch = a.code.toLowerCase() === q;
+        const bCodeMatch = b.code.toLowerCase() === q;
+        if (aCodeMatch && !bCodeMatch) return -1;
+        if (bCodeMatch && !aCodeMatch) return 1;
 
-      // Then prioritize code starts with
-      const aCodeStarts = a.code.toLowerCase().startsWith(q);
-      const bCodeStarts = b.code.toLowerCase().startsWith(q);
-      if (aCodeStarts && !bCodeStarts) return -1;
-      if (bCodeStarts && !aCodeStarts) return 1;
+        // Then prioritize code starts with
+        const aCodeStarts = a.code.toLowerCase().startsWith(q);
+        const bCodeStarts = b.code.toLowerCase().startsWith(q);
+        if (aCodeStarts && !bCodeStarts) return -1;
+        if (bCodeStarts && !aCodeStarts) return 1;
 
-      // Sort by code number
-      return Number(a.code) - Number(b.code);
-    });
+        // Sort by code number
+        return Number(a.code) - Number(b.code);
+      });
   }
 
   function renderResults(results, query) {
     if (results.length === 0) {
+      // todo: use localized string
       searchResults.innerHTML = '<div class="search-no-results">No results found</div>';
       searchResults.classList.add('visible');
       return;
     }
 
-    const html = results.slice(0, 10).map(item => {
-      const categoryClass = item.category;
-      return `
-        <a href="${item.url}" class="search-result-item ${categoryClass}">
-          <span class="search-result-code">${highlightMatch(item.code, query)}</span>
-          <span class="search-result-name">${highlightMatch(item.name, query)}</span>
-          <span class="search-result-overview">${highlightMatch(item.overview, query)}</span>
-        </a>
-      `;
-    }).join('');
+    const html = results
+      .slice(0, 10)
+      .map((item) => {
+        const categoryClass = item.category;
+        return `
+          <a href="${item.url}" class="search-result-item ${categoryClass}">
+            <span class="search-result-code">${highlightMatch(item.code, query)}</span>
+            <span class="search-result-name">${highlightMatch(item.name, query)}</span>
+            <span class="search-result-overview">${highlightMatch(item.overview, query)}</span>
+          </a>
+        `;
+      })
+      .join('');
 
     searchResults.innerHTML = html;
     searchResults.classList.add('visible');

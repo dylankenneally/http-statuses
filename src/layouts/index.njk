@@ -1,26 +1,31 @@
 {% extends "base.njk" %}
 
 {% block content %}
-<section>
-  <h1 class="banner-title">{{ strings.siteName }}</h1>
-  <p>{{ strings.siteDescription }}</p>
-  {{ content | safe }}
-</section>
 
-<div class="search-container">
-  <div class="search-input-wrapper">
-    <input
-      type="text"
-      id="search-input"
-      class="search-input"
-      placeholder="Search HTTP status codes..."
-      aria-label="Search HTTP status codes"
-      autocomplete="off"
-    />
-    <span class="search-icon">{% include "search.svg" %}</span>
+<section>
+    <div class="header">
+    <h1 class="banner-title">{{ strings.siteName }}</h1>
+
+    <search>
+        <div class="search-input-wrapper">
+          <input
+            type="search"
+            id="search-input"
+            class="search-input"
+            placeholder="{{ strings.searchInputPlaceholder }}"
+            aria-label="{{ strings.searchInputLabel }}"
+            autocomplete="off"
+          />
+          <span class="search-icon">{% include "search.svg" %}</span>
+        </div>
+        <div id="search-results" class="search-results" aria-live="polite"></div>
+    </search>
+
   </div>
-  <div id="search-results" class="search-results" aria-live="polite"></div>
-</div>
+
+    <p>{{ strings.siteDescription }}</p>
+    {{ content | safe }}
+  </section>
 
 <nav class="main-nav">
   <ul>

@@ -402,6 +402,7 @@ blockquote .material-symbols-outlined p {
   white-space: unset;
   display: -webkit-box;
   -webkit-line-clamp: 3;
+  line-clamp: 3;
   -webkit-box-orient: vertical;
 }
 
@@ -458,11 +459,31 @@ blockquote .material-symbols-outlined p {
   }
 }
 
+.header {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.header h1,
+.header search {
+  box-sizing: border-box;
+}
+
+.header h1 {
+    width: calc(60% - 10px);
+    flex: 1 0 calc(60% - 0.5rem);
+}
+
+.header search {
+    width: calc(40% - 10px);
+    flex: 1 0 calc(40% - 0.5rem);
+}
+
 /* Search styles */
-.search-container {
+search {
   position: relative;
   max-width: 32em;
-  margin: 1.5em auto;
+  margin: 2.5em auto;
   padding: 0 1em;
 }
 
