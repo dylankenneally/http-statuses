@@ -3,9 +3,8 @@
 {% block content %}
 
 <section>
-    <div class="header">
+  <div class="header">
     <h1 class="banner-title">{{ strings.siteName }}</h1>
-
     <search>
         <div class="search-input-wrapper">
           <input
@@ -20,24 +19,23 @@
         </div>
         <div id="search-results" class="search-results" aria-live="polite"></div>
     </search>
-
   </div>
 
-    <p>{{ strings.siteDescription }}</p>
-    {{ content | safe }}
-  </section>
+  <p>{{ strings.siteDescription }}</p>
+  {{ content | safe }}
+</section>
 
 <nav class="main-nav">
   <ul>
-    <li><a href="#informational">Informational</a></li>
-    <li><a href="#successful">Successful</a></li>
-    <li><a href="#redirection">Redirection</a></li>
-    <li><a href="#client-error">Client error</a></li>
-    <li><a href="#server-error">Server error</a></li>
+    <li><a href="#informational">{{ strings.informational }}</a></li>
+    <li><a href="#successful">{{ strings.successful }}</a></li>
+    <li><a href="#redirection">{{ strings.redirection }}</a></li>
+    <li><a href="#client-error">{{ strings.clientError }}</a></li>
+    <li><a href="#server-error">{{ strings.serverError }}</a></li>
   </ul>
 </nav>
 
-<h2 id="informational">Informational</h2>
+<h2 id="informational">{{ strings.informational }}</h2>
 <div class="card-layout">
   {% for item in collections.informational %}
   <a href={{item.url | url }} class="image-background_container card-layout_item hover-highlight">
@@ -50,7 +48,7 @@
   {% endfor %}
 </div>
 
-<h2 id="successful">Successful</h2>
+<h2 id="successful">{{ strings.successful }}</h2>
 <div class="card-layout">
   {% for item in collections.successful %}
   <a href={{item.url | url }} class="image-background_container card-layout_item hover-highlight">
@@ -63,7 +61,7 @@
   {% endfor %}
 </div>
 
-<h2 id="redirection">Redirection</h2>
+<h2 id="redirection">{{ strings.redirection }}</h2>
 <div class="card-layout">
   {% for item in collections.redirection %}
   <a href={{item.url | url }} class="image-background_container card-layout_item hover-highlight">
@@ -76,7 +74,7 @@
   {% endfor %}
 </div>
 
-<h2 id="client-error">Client error</h2>
+<h2 id="client-error">{{ strings.clientError }}</h2>
 <div class="card-layout">
   {% for item in collections['client error'] %}
   <a href={{item.url | url }} class="image-background_container card-layout_item hover-highlight">
@@ -89,7 +87,7 @@
   {% endfor %}
 </div>
 
-<h2 id="server-error">Server error</h2>
+<h2 id="server-error">{{ strings.serverError }}</h2>
 <div class="card-layout">
   {% for item in collections['server error'] %}
   <a href={{item.url | url }} class="image-background_container card-layout_item hover-highlight">
