@@ -3,6 +3,7 @@ const markdownIt = require('markdown-it');
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const rssPlugin = require('@11ty/eleventy-plugin-rss');
 const faviconsPlugin = require("eleventy-plugin-gen-favicons");
+const mila = require("markdown-it-link-attributes");
 
 require('dotenv').config();
 
@@ -62,6 +63,19 @@ module.exports = (eleventyConfig) => {
   eleventyConfig.addCollection('redirection', (collection) => codes(collection, 3));
   eleventyConfig.addCollection('client error', (collection) => codes(collection, 4));
   eleventyConfig.addCollection('server error', (collection) => codes(collection, 5));
+
+  // Open external links in a new tab with security attributes
+  const milaOptions = {
+    matcher(href) {
+      return href.match(/^https?:\/\//); // Matches all absolute links (external)
+    },
+    attrs: {
+      target: "_blank",
+      rel: "nofollow external noopener noreferrer",
+    },
+  };
+
+  eleventyConfig.amendLibrary("md", (mdLib) => mdLib.use(mila, milaOptions));
 
   return {
     dir,
