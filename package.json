@@ -6,7 +6,7 @@
   "scripts": {
     "start": "npm run clean && eleventy --serve",
     "clean": "rimraf build",
-    "minify": "node scripts/minify.js build/*.html build/**/*.html build/css/style.css",
+    "minify": "node scripts/minify.js build/*.html build/**/*.html build/css/style.css build/*.json",
     "build": "npm run clean && eleventy",
     "postbuild": "npm run minify"
   },
