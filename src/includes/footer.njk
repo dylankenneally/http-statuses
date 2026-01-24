@@ -1,3 +1,7 @@
 <footer>
-  <p class="main-footer">© {{ strings.authorName }} 2025. <a href="{{ '/about/' | url }}">{{ strings.about }}</a> | <a href="mailto:{{ strings.authorEmail }}">{{ strings.contact }}</a></p>
+  <p class="main-footer">
+    © {{ strings.authorName }} 2025.
+    <a href="{{ '/about/' | url }}">{{ strings.about }}</a> | <a href="mailto:{{ strings.authorEmail }}">{{ strings.contact }}</a>
+    {% include "themeToggle.njk" %}
+  </p>
 </footer>
