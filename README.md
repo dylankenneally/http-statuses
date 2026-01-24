@@ -53,25 +53,6 @@ Note that changes to these variables are not noticed while the development serve
 
 Parts of the copy (text content) is courtesy of [httpstatuses.io]. Other parts of the copy are adapted from the [MDN docs]. The UX for the site is inspired by [Laws of UX] by [Jon Yablonski]. Some imagery is courtesy of [Google Font Icons].
 
-<!-- markdownlint-disable-next-line no-trailing-punctuation -->
-## TODO:
-
-Focus on playing with 11ty, make notes on findings.
-
-Add skip to main: <https://web.dev/learn/html/navigation/#skip-to-content-link>
-
-### Snags list
-
-- [ ] SVG's are in the output files multiple times, use `use` instead
-
-### features
-
-- [ ] search, quick access
-
-### other
-
-- [ ] mdo's best practices - ensure followed
-
 <!-- Links in this doc -->
 [11ty]: https://11ty.dev/
 [Netlify app]: https://httpstatuses.netlify.app/

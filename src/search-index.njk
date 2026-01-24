@@ -1,0 +1,15 @@
+---
+permalink: /search-index.json
+---
+[
+{%- for item in collections.codes %}
+  {
+    "code": "{{ item.data.code }}",
+    "name": "{{ item.data.name | safe }}",
+    "title": "{{ item.data.title | safe }}",
+    "overview": {{ item.data.overview | dump | safe }},
+    "url": "{{ item.url | url }}",
+    "category": "{% if item.data.code | string | first == '1' %}informational{% elif item.data.code | string | first == '2' %}successful{% elif item.data.code | string | first == '3' %}redirection{% elif item.data.code | string | first == '4' %}client-error{% else %}server-error{% endif %}"
+  }{% if not loop.last %},{% endif %}
+{%- endfor %}
+]

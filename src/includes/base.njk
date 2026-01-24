@@ -5,7 +5,7 @@
 {% endif %}
 
 <!doctype html>
-<html lang="en">
+<html lang="{{ site.locale }}">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -66,5 +66,6 @@
 
       new ResizeObserver(updateHeaderBackgroundSize).observe(header);
     </script>
+    <script src="{{ '/js/search.js' | url }}" defer></script>
   </body>
 </html>

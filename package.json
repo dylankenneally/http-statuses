@@ -6,7 +6,7 @@
   "scripts": {
     "start": "npm run clean && eleventy --serve",
     "clean": "rimraf build",
-    "minify": "node scripts/minify.js build/*.html build/**/*.html build/css/style.css",
+    "minify": "node scripts/minify.js build/*.html build/**/*.html build/css/style.css build/*.json",
     "build": "npm run clean && eleventy",
     "postbuild": "npm run minify"
   },
@@ -25,6 +25,7 @@
     "dotenv": "^17.2.3",
     "eleventy-plugin-gen-favicons": "^1.1.3",
     "html-minifier": "^4.0.0",
+    "markdown-it-link-attributes": "^4.0.1",
     "rimraf": "^6.0.1"
   },
   "dependencies": {

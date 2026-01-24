@@ -17,6 +17,19 @@ const l10n = {
     skipToMain: "Skip To Main",
     authorName,
     authorEmail,
+
+    searchInputPlaceholder: "Search HTTP status codes...",
+    searchInputLabel: "Search HTTP status codes",
+    // todo: searchNoResults: "No results found.",
+
+    about: "About",
+    contact: "Contact",
+
+    informational: "Informational",
+    successful: "Successful",
+    redirection: "Redirection",
+    clientError: "Client Error",
+    serverError: "Server Error",
   },
 };
 
