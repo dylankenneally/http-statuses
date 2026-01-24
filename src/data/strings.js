@@ -24,6 +24,8 @@ const l10n = {
 
     about: "About",
     contact: "Contact",
+    toggleTheme: "Toggle theme",
+    toggleThemeTip: "Toggle light/dark mode",
 
     informational: "Informational",
     successful: "Successful",
